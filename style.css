@@ -39,13 +39,12 @@ nav
 	font-size: 45px;
 
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: flex-end;
-	
-	min-width: 10%;
 	
 	margin-right: 5px;
 	padding: 5px;
+	padding-left: 25px;
 	border-radius: 3px;
 	
 	box-shadow: 2px 2px 15px 4px rgba(0, 0, 0, 1);
@@ -62,7 +61,7 @@ a
 	padding: 20px;
 	border-radius: 3px;
 	
-	transition: 0.2s;
+	transition: 0.25s;
 }
 
 a, a:visited
@@ -104,7 +103,7 @@ header img
 
 header img:hover
 {
-	transform : scale(1.03);
+	transform : scale(1.02);
 	box-shadow: 2px 2px 25px 4px rgba(0, 0, 0, 1);
 }
 
@@ -122,19 +121,15 @@ table
 	border-collapse: collapse;
 }
 
-tr:nth-child(1)
-{
-	align-self: flex-start;
-}
-
 td
 {
 	transition: 0.2s;
 }
 
-td:hover
+tr:first-child
 {
-	transform: scale(1.03);
+	align-items: center;
+	font-size: 45px;
 }
 
 td:active
