@@ -4,9 +4,14 @@
 	src: url('./fonts/OpenSans/OpenSans-Regular.ttf');
 }
 
+*
+{
+	color: rgba(255, 255, 255, 0.87);
+}
+
 .doc
 {
-	font-family: Roboto, OpenSans, "Comic Sans MS", Arial, Serif;
+	font-family: Roboto, OpenSans, Arial, Serif;
 	font-size: 20px;
 	
 	display: flex;
@@ -15,16 +20,16 @@
 
 header
 {
-	background-color: rgba(255, 255, 255, 0.05);
+	/* background-color: rgba(255, 255, 255, 0.05); */
 	display: flex;
 	justify-content: space-around;
-	align-items: center;
-	height: 7%;
+	align-items: flex-start;
+	height: 6%;
 	padding: 10px;
 	
 	border-radius: 3px;
 	
-	box-shadow: 2px 2px 15px 4px rgba(0, 0, 0, 1);
+	/* box-shadow: 2px 2px 15px 4px rgba(0, 0, 0, 1); */
 	
 	/* border-bottom: 1px solid rgba(0, 0, 0, 0.12); */
 }
@@ -32,11 +37,12 @@ header
 nav
 {
 	font-size: 45px;
-	color: white;
 
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-end;
+	
+	min-width: 10%;
 	
 	margin-right: 5px;
 	padding: 5px;
@@ -44,11 +50,11 @@ nav
 	
 	box-shadow: 2px 2px 15px 4px rgba(0, 0, 0, 1);
 	
-	height: 95%;
+	min-height: 35%;
 	
 	border-collapse: collapse;
 	
-	/* background-color: rgba(255, 255, 255, 0.02); */
+	background-color: rgba(255, 255, 255, 0.02);
 }
 
 a
@@ -62,13 +68,17 @@ a
 a, a:visited
 {
 	text-decoration: none;
-	color: white;
 }
 
 a:hover
 {
 	border-bottom: 7px solid #e302fc;
 	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 1);
+	position: relative;
+	top: 2px;
+	padding-bottom: 14px;
+	padding-top: 6px;
 	
 	transform: scale(1.05);
 }
@@ -87,7 +97,7 @@ header img
 	box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 1);
 	
 	margin: 5px;
-	border-radius: 3px;
+	border-radius: 200px;
 	
 	transition: 0.2s;
 }
@@ -103,7 +113,6 @@ body
 	justify-content: center;
 	
 	background-color: rgba(18,18,18,1);
-	color: #fff;
 	
 	display: flex;
 }
@@ -113,6 +122,11 @@ table
 	border-collapse: collapse;
 }
 
+tr:nth-child(1)
+{
+	align-self: flex-start;
+}
+
 td
 {
 	transition: 0.2s;
@@ -120,22 +134,23 @@ td
 
 td:hover
 {
-	transform: scale(1.05);
+	transform: scale(1.03);
 }
 
 td:active
 {
-	transform: scale(0.95);
+	transform: scale(0.98);
 }
 
 tr
 {
 	/* border: 1px solid black; */
+	display: inline;
 }
 
 p
 {
-	font-size: 30px;
+	font-size: 35px;
 	border-left: 7px solid #e302fc;
 	background-color: rgba(255, 255, 255, 0.05);
 }
@@ -202,6 +217,8 @@ p
 	width: 85%;
 	padding: 5px;
 	margin: auto;
+	
+	border-radius: 3px;
 }
 
 .cell
