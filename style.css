@@ -100,11 +100,11 @@ header img
 	transition: 0.2s;
 }
 
-header img:hover
-{
-	transform : scale(1.02);
-	box-shadow: 2px 2px 25px 4px rgba(0, 0, 0, 1);
-}
+/* header img:hover */
+/* { */
+	/* transform : scale(1.02); */
+	/* box-shadow: 2px 2px 25px 4px rgba(0, 0, 0, 1); */
+/* } */
 
 body
 {
@@ -288,6 +288,40 @@ footer p
 	animation-duration: 0.7s;
 }
 
+@media only screen and (max-width: 1200px)
+{
+	.modal
+	{
+		grid-template-columns: 50%;
+		
+		/* grid-template-rows:  */
+	}
+	
+	nav
+	{
+		max-width: 50%;
+	}
+	
+	td
+	{
+		width: 50%;
+		font-size: 30px;
+	}
+	
+	header img
+	{
+		width: 50%;
+		/* border-radius: 0%; */
+	}
+	
+	.modal img
+	{
+		grid-row-start: 1;
+		grid-row-end: 2;
+		grid-column: span 1;
+	}
+}
+
 .modal >*
 {
 	/* border: 1px solid white; */
@@ -442,13 +476,13 @@ footer p
 .twitter
 {
 	background-color: rgba(85, 172, 238, 0.8);
-	text-decoration: none;
+	/* text-decoration: none; */
 }
 
 .reddit
 {
 	background-color: rgba(255, 121, 51, 0.8);
-	text-decoration: none;
+	/* text-decoration: none; */
 }
 
 .twitter, .reddit
