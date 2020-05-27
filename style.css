@@ -100,12 +100,6 @@ header img
 	transition: 0.2s;
 }
 
-/* header img:hover */
-/* { */
-	/* transform : scale(1.02); */
-	/* box-shadow: 2px 2px 25px 4px rgba(0, 0, 0, 1); */
-/* } */
-
 body
 {
 	justify-content: center;
@@ -219,7 +213,29 @@ footer p
 	height: 85%;
 	width: 85%;
 	
-	border: 3px solid #fff;
+	border: 3px solid #D600DD;
+	
+	animation-duration: 8s;
+	animation-name: "colorWave";
+	animation-iteration-count: infinite;
+}
+
+@keyframes colorWave
+{	
+	0%
+	{
+		border-color: rgba(214, 0, 221, 1);
+	}
+	
+	50%
+	{
+		border-color: rgba(214, 0, 221, 0);
+	}
+	
+	100%
+	{
+		border-color: rgba(214, 0, 221, 1);
+	}
 }
 
 .cell p
@@ -231,10 +247,8 @@ footer p
 	border-radius: 3px;
 }
 
-.cell
-{
-	/* border: 2px solid #B000B5; */
-}
+
+/* MODAL */
 
 .blur
 {
@@ -246,19 +260,6 @@ footer p
 	top: 0;
 	width: 100%;
 	height: 100%;
-}
-
-@keyframes closeup
-{
-	from {
-		top: -100vh;
-		/* opacity: 0.9; */
-	}
-	
-	to {
-		top: 10%
-		/* opacity: 1; */
-	}
 }
 
 .modal
@@ -286,6 +287,19 @@ footer p
 	
 	animation-name: closeup;
 	animation-duration: 0.7s;
+}
+
+@keyframes closeup
+{
+	from {
+		top: -100vh;
+		/* opacity: 0.9; */
+	}
+	
+	to {
+		top: 10%;
+		/* opacity: 1; */
+	}
 }
 
 @media only screen and (max-width: 1200px)
@@ -334,7 +348,7 @@ footer p
 	text-align: center;
 }
 
-.modal img
+#modal-img
 {
 	max-width: 97%;
 	max-height: 97%;
@@ -344,7 +358,7 @@ footer p
 	border-radius: 10px;
 	
 	grid-row-start: 2;
-	grid-row-end: 16;
+	grid-row-end: 17;
 }
 
 .close
@@ -393,16 +407,27 @@ footer p
 	padding-left: 5px;
 }
 
-#artistLine1
+.model
+{
+	grid-row-start: 8;
+}
+
+#modelLine1
 {
 	display:block;
 	grid-row-start: 9;
 }
 
-#artistLine2
+#modelLine2
 {
 	display:block;
 	grid-row-start: 10;
+}
+
+#modelLine3
+{
+	display:block;
+	grid-row-start: 11;
 }
 
 #twitterPost
@@ -415,14 +440,9 @@ footer p
 	display: flex;
 }
 
-.modelBy
-{
-	grid-row-start: 8;
-}
-
 .originalPost
 {
-	grid-row-start: 12;
+	grid-row-start: 13;
 }
 
 .button, .twitter, .reddit
@@ -446,7 +466,7 @@ footer p
 	margin: 20px;
 	background-color: #A600BC;
 	
-	grid-row-start: 15;
+	grid-row-start: 16;
 }
 
 .button:hover, .twitter:hover, .reddit:hover
@@ -471,6 +491,7 @@ footer p
 	width: 20px;
 	text-align: center;
 	text-decoration: none;
+	margin-left: 25px;
 	
 	border: 0.16em solid rgba(255, 255, 255, 0);
 	border-radius: 50%;
@@ -499,6 +520,11 @@ footer p
 	margin-left: 25px;
 }
 
+.fa-female
+{
+	background: #A600BC;
+}
+
 .fa-deviantart
 {
 	background: rgba(0, 229, 155, 0.85);
@@ -509,13 +535,13 @@ footer p
 .twitter
 {
 	background-color: rgba(85, 172, 238, 0.8);
-	grid-row-start: 13;
+	grid-row-start: 14;
 }
 
 .reddit
 {
 	background-color: rgba(255, 121, 51, 0.8);
-	grid-row-start: 14;
+	grid-row-start: 15;
 }
 
 .twitter, .reddit

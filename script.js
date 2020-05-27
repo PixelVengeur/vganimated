@@ -6,11 +6,16 @@ var modalImg = $('#modal-img');
 var imgTitle = document.getElementById("title");
 var imgCom = document.getElementById("commission");
 
-var modelA1 = document.getElementById("artist1");
-var line1 = document.getElementById("artistLine1");
 
-var modelA2 = document.getElementById("artist2");
-var line2 = document.getElementById("artistLine2");
+var modelA1 = document.getElementById("model1");
+var line1 = document.getElementById("modelLine1");
+
+var modelA2 = document.getElementById("model2");
+var line2 = document.getElementById("modelLine2");
+
+var modelA3 = document.getElementById("model3");
+var line3 = document.getElementById("modelLine3");
+
 
 var twitterPost = document.getElementById("twitterPost");
 
@@ -44,7 +49,7 @@ $('.content').click(function()
 	}
 	
 	
-	// Artist 1	
+	// Model 1	
 	
 	if (altTab[2]);
 	{
@@ -58,7 +63,7 @@ $('.content').click(function()
 	}
 	
 	
-	// Artist 2
+	// Model 2
 	
 	if (altTab[3])
 	{
@@ -72,15 +77,29 @@ $('.content').click(function()
 	}
 	
 	
-	// Twitter post
+	// Model 3
 	
 	if (altTab[4])
 	{
-		twitterPost.style.display = "flex";
-		$('#twitterPost').attr("href", altTab[4]);
+		line3.style.display = "block";
+		modelA3.innerHTML = altTab[4];
 	}
 	
 	if (! altTab[4])
+	{
+		line3.style.display = "none";
+	}
+	
+	
+	// Twitter post
+	
+	if (altTab[5])
+	{
+		twitterPost.style.display = "flex";
+		$('#twitterPost').attr("href", altTab[5]);
+	}
+	
+	if (! altTab[5])
 	{
 		twitterPost.style.display = "none";
 	}
@@ -88,13 +107,13 @@ $('.content').click(function()
 	
 	// Reddit post
 	
-	if (altTab[5])
+	if (altTab[6])
 	{
 		redditPost.style.display = "flex";
-		$('#redditPost').attr("href", altTab[5]);
+		$('#redditPost').attr("href", altTab[6]);
 	}
 	
-	if (! altTab[5])
+	if (! altTab[6])
 	{
 		redditPost.style.display = "none";
 	}
