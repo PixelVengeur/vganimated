@@ -4,8 +4,9 @@
 	<head>
 		<meta charset = "utf-8">
 		<title>Gallery </title>
+		<link rel = "stylesheet" href = "common.css">
 		<link rel = "stylesheet" href = "styleGallery.css">
-		<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 		<link rel = "stylesheet" href = "https://unpkg.com/emoji.css/dist/emoji.min.css">
 	</head>
 	
@@ -21,7 +22,7 @@
 						<td><a href = "index.html"> Gallery </a></td>
 					</tr>
 					<tr>
-						<td><a href = "index.html"> Models </a></td>
+						<td><a href = "models.html"> Models </a></td>
 					</tr>
 					<tr>
 						<td><a href = "hire.html"> Hire me </a></td>
@@ -31,10 +32,19 @@
 			
 			<img src="images/SombraArcade - CloseUp - S.png"></img>
 		</header>
+		
+		<div class="theme-switch-wrapper">
+			<em>Toggle light mode</em>
+			<label class="theme-switch" for="checkbox">
+				<input type="checkbox" id="checkbox" />
+				<div class="slider round"></div>
+			</label>
+		</div>
+
 
 		<div class = "outside">
-			<!-- <div class = "cell"> <p>Latest artwork</p><img src = "./images/AsheFaithWidow - WM - S.png" alt = "Check-up : creativeluck60 : Widowmaker : Ashe : Faith Connors" class = "content"></img> </div> -->
-			<div class = "cell"> <p>Latest artwork</p><img src = "./images/EchoGeisha - WM - S.png" alt = "Surprise Botsex :  : Echo :  :  : https://twitter.com/VG_Animated/status/1255147010274910209?s=20" class = "content"></img> </div>
+			<div class = "cell"> <p>Latest artwork</p><img src = "./images/AsheFaithWidow - WM - S.png" alt = "Check-up : creativeluck60 : Widowmaker : Ashe : Faith Connors" class = "content"></img> </div>
+			<!-- <div class = "cell"> <p>Latest artwork</p><img src = "./images/EchoGeisha - WM - S.png" alt = "Surprise Botsex :  : Echo :  :  : https://twitter.com/VG_Animated/status/1255147010274910209?s=20" class = "content"></img> </div> -->
 			<!-- <div class = "cell"> <img src = "./images/ParkingSpot - WM - S.png" alt = "Wet Dreams : creativeluck60 : Mercy : Pharah : Lara : https://www.twitter.com/vg_animated : https://www.reddit.com" class = "content"></img> </div> -->
 			<!-- <div class = "cell"> <img src = "./images/MercyPinkDVa - S.png" alt = "Cervix Massage : darkrobbe1 : Mercy : D.Va" class = "content"></img> </div> -->
 			<div class = "cell"> <img src = "./images/DVaOverflow - WM - S.png" alt = "Stack Overflow : darkrobbe1 : D.Va :  :  : https://twitter.com/VG_Animated/status/1253273375696445441?s=20" class = "content"></img> </div>
@@ -70,9 +80,9 @@
 				<div></div>
 				
 				<h4 class = "model">Models</h4>
-				<span id = "modelLine1"> <a href = "" target = "_blank" class = "fa fa-female"></a> <span class = "artist" id = "model1"> </span> </span>
-				<span id = "modelLine2"> <a href = "" target = "_blank" class = "fa fa-female"></a> <span class = "artist" id = "model2"> </span> </span>
-				<span id = "modelLine3"> <a href = "" target = "_blank" class = "fa fa-female"></a> <span class = "artist" id = "model3"> </span> </span>
+				<span id = "modelLine1"> <a href = "" target = "_blank"><i class = "fas fa-female"></i></a> <span class = "artist" id = "model1"> </span> </span>
+				<span id = "modelLine2"> <a href = "" target = "_blank"><i class = "fas fa-female"></i></a> <span class = "artist" id = "model2"> </span> </span>
+				<span id = "modelLine3"> <a href = "" target = "_blank"><i class = "fas fa-female"></i></a> <span class = "artist" id = "model3"> </span> </span>
 				
 				<div></div>
 				
@@ -86,12 +96,12 @@
 			</div>
 		</div>
 		
+		<script src="https://kit.fontawesome.com/2940d77196.js" crossorigin="anonymous"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src = "script.js"></script>
+		<script src = "common.js"></script>
 		
 	</body>
-	
-	
 	
 	
 	<!-- <footer> -->

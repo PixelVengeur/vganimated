@@ -1,0 +1,92 @@
+.model-wrapper
+{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(auto-fit, 1fr);
+	grid-auto-flow: dense;
+	margin: 2%;
+	margin-top: 4%;
+}
+
+.model-wrapper *
+{
+	border-radius: 4px;
+}
+
+.model-wrapper >*
+{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-auto-rows: max-content;
+	text-align: center;
+	
+	/* margin: auto; */
+	width: 98%;
+	
+	min-height: 1vh;
+	
+	box-shadow: var(--shadow-button);
+	
+	/* border: 2px solid green; */
+}
+
+.model-wrapper >* h3
+{
+	/* display: flex; */
+	/* flex-direction: column; */
+	/* justify-content: center; */
+	align-items: center;
+	
+	grid-row-start: 1;
+	grid-row-end: 14;
+	
+	background: var(--secondary);
+	margin: 5px;
+	padding: 10px;
+	
+	
+	/* border: 2px solid white; */
+}
+
+.model-wrapper >* h3 img
+{
+	width: 100%;
+	margin-top: 20px;
+}
+
+.model-wrapper >* div
+{
+	display: grid;
+	grid-template-columns: 2fr 2fr 1fr;
+	
+	background: var(--secondary);
+	box-shadow: var(--shadow-button);
+	padding: 5px;
+	margin: 4px;
+	
+	
+	/* border: 2px solid red; */
+}
+
+.model-wrapper >* div h4
+{
+	grid-row: span 10;
+	margin: 3px;
+}
+
+.model-wrapper >* div span
+{
+	margin: 2px;
+	padding: 5px;
+}
+
+.model-wrapper >* div span:nth-child(2n)
+{
+	background: var(--secondary);
+	box-shadow: var(--shadow-button);
+}
+
+.overwatch
+{
+	grid-row: span 5;
+}
