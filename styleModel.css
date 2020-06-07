@@ -1,8 +1,8 @@
 .model-wrapper
 {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: repeat(auto-fit, 1fr);
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(10, minmax(1fr, 1vh));
 	grid-auto-flow: dense;
 	margin: 2%;
 	margin-top: 4%;
@@ -20,12 +20,7 @@
 	grid-auto-rows: max-content;
 	text-align: center;
 	
-	/* margin: auto; */
 	width: 98%;
-	
-	min-height: 1vh;
-	
-	box-shadow: var(--shadow-button);
 	
 	/* border: 2px solid green; */
 }
@@ -38,7 +33,7 @@
 	align-items: center;
 	
 	grid-row-start: 1;
-	grid-row-end: 14;
+	grid-row-end: 50;
 	
 	background: var(--secondary);
 	margin: 5px;
@@ -61,7 +56,7 @@
 	
 	background: var(--secondary);
 	box-shadow: var(--shadow-button);
-	padding: 5px;
+	padding: 0.5%;
 	margin: 4px;
 	
 	
@@ -72,11 +67,13 @@
 {
 	grid-row: span 10;
 	margin: 3px;
+	
+	align-self: center;
 }
 
 .model-wrapper >* div span
 {
-	margin: 2px;
+	margin: 1%;
 	padding: 5px;
 }
 
@@ -84,9 +81,68 @@
 {
 	background: var(--secondary);
 	box-shadow: var(--shadow-button);
+	align-self: center;
+	padding: 5%;
 }
 
 .overwatch
 {
-	grid-row: span 5;
+	grid-row: span 4;
+}
+
+.repo a
+{
+	text-decoration: none;
+}
+
+.repo div svg, rect
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	fill: transparent;
+}
+
+.repo-wrapper
+{
+	position: relative;
+	padding: 15px;
+	margin: 30px;
+}
+
+rect
+{
+	stroke: var(--accent);
+	stroke-width: 4;
+	stroke-dasharray: 200;
+	animation: slide 8s linear infinite;
+}
+
+@keyframes slide
+{
+	0%
+	{
+		stroke-dashoffset: 400;
+	}
+	
+	100%
+	{
+		stroke-dashoffset: 0;
+	}
+}
+
+.vga
+{
+	grid-column: span 2;
+	background-color: var(--accent);
+	transition: 0.2s;
+}
+
+.vga:hover
+{
+	transform: scale(1.02);
+	box-shadow: var(--button-shadow-hover);
+	cursor: pointer;
 }

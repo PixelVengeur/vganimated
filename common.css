@@ -263,16 +263,16 @@ footer p
 	color: white;
 	
 	border: 0.12em solid rgba(255, 255, 255, 0);
-	border-radius: 50%;
 	box-shadow: var(--shadow-button);
+	border-radius: 50%;
 	
 	transition: 0.2s;
 }
 
-.fas:hover
+.fas:hover:not(.fa-question), .fab:hover
 {
 	transform: scale(1.1);
-	border-color: rgba(255, 255, 255, 1);
+	border-color: rgba(255, 255, 255, 0.8);
 	box-shadow: 11px 5px 21px -7px rgba(0,0,0,0.4);
 }
 
@@ -289,4 +289,9 @@ footer p
 .fa-deviantart
 {
 	background-color: rgba(5, 204, 71, 0.9);
+}
+
+.fa-question
+{
+	background-color: var(--secondary);
 }
