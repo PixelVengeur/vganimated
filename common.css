@@ -251,7 +251,7 @@ footer p
 	color: var(--text-minor);
 }
 
-.fas, .fab
+.fab, .fas
 {
 	padding: 7px;
 	margin-right: 5px;
@@ -262,17 +262,17 @@ footer p
 	margin-left: 25px;
 	color: white;
 	
-	border: 0.12em solid rgba(255, 255, 255, 0);
+	/* border: 0.12em solid rgba(255, 255, 255, 0); */
 	box-shadow: var(--shadow-button);
 	border-radius: 50%;
 	
 	transition: 0.2s;
 }
 
-.fas:hover:not(.fa-question), .fab:hover
+.fas:not(.fa-question):hover, .fab:hover
 {
 	transform: scale(1.1);
-	border-color: rgba(255, 255, 255, 0.8);
+	/* border-color: rgba(255, 255, 255, 0.8); */
 	box-shadow: 11px 5px 21px -7px rgba(0,0,0,0.4);
 }
 

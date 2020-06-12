@@ -60,29 +60,9 @@
 	height: 85%;
 	width: 85%;
 	
-	border: 3px solid #D600DD;
-	
-	animation-duration: 8s;
-	animation-name: "colorWave";
-	animation-iteration-count: infinite;
-}
-
-@keyframes colorWave
-{	
-	0%
-	{
-		border-color: var(--accent);
-	}
-	
-	50%
-	{
-		border-color: #fff;
-	}
-	
-	100%
-	{
-		border-color: var(--accent);
-	}
+	border: 3px solid transparent;
+	border-image: linear-gradient(17deg, #F0F, #0F0, #F00, #FF0, #F0F);
+	border-image-slice: 1;
 }
 
 .cell p
@@ -124,7 +104,7 @@
 	background-color: var(--modal-color);
 	
 	display: grid;
-	grid-template-columns: 70%, 30%;
+	grid-template-columns: 5 %, 65%, 25%, 5%;
 	grid-template-rows: 1fr;
 	
 	padding-right: 20px;
@@ -188,6 +168,8 @@
 	/* border: 1px solid white; */
 	border-radius: 2px;
 	margin: 3px;
+	
+	/* border: 2px solid red; */
 }
 
 .modal h2
@@ -217,7 +199,7 @@
 	
 	text-decoration: bold;
 	
-	grid-column: span 2;
+	grid-column: span 4;
 	
 	border-radius: 5px;
 	
@@ -235,6 +217,7 @@
 {
 	color:red;
 	cursor: pointer;
+	transform: rotate(90deg);
 }
 
 .modal strong
@@ -256,24 +239,26 @@
 
 .model
 {
-	grid-row-start: 8;
+	grid-row-start: 7;
+}
+
+#modelLine1, #modelLine2, #modelLine3
+{
+	display:block;
 }
 
 #modelLine1
 {
-	display:block;
 	grid-row-start: 9;
 }
 
 #modelLine2
 {
-	display:block;
 	grid-row-start: 10;
 }
 
 #modelLine3
 {
-	display:block;
 	grid-row-start: 11;
 }
 
@@ -352,4 +337,27 @@
 .twitter, .reddit
 {
 	margin-left: 20px;
+}
+
+.fa-chevron-left, .fa-chevron-right
+{
+	grid-row-start: 2;
+	grid-row-end: 17;
+	
+	box-shadow: transparent;
+	border: none;
+	opacity: 0.6;
+	width: 0%;
+	
+	font-size: 60px;
+	
+	align-self: center;
+	
+	transition: 0.2s;
+}
+
+.fa-chevron-left:hover, .fa-chevron-right:hover
+{
+	cursor: pointer;
+	transform: scale(1.03);
 }
