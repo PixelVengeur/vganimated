@@ -54,9 +54,8 @@
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
-  position: absolute;
-  top: 36%;
-  right: 5%;
+  position: relative;
+  left: 80%;
 }
 
 em {
@@ -189,7 +188,7 @@ nav:nth-child(1)
 
 header img
 {
-	max-width: 30vh;
+	max-width: 20vh;
 	
 	box-shadow: var(--nav-buttons-shadow);
 	

@@ -56,6 +56,7 @@
 
 .outside .cell:nth-child(1) img
 {
+	position: relative;
 	margin-top: 20px;
 	height: 85%;
 	width: 85%;
@@ -63,6 +64,21 @@
 	border: 3px solid transparent;
 	border-image: linear-gradient(17deg, #F0F, #0F0, #F00, #FF0, #F0F);
 	border-image-slice: 1;
+	
+	/* animation: hue 8s linear infinite; */
+}
+
+@keyframes hue
+{
+	0%
+	{
+		filter: hue-rotate(0deg);
+	}
+	
+	100%
+	{
+		filter: hue-rotate(360deg);
+	}
 }
 
 .cell p
@@ -120,46 +136,10 @@
 {
 	from {
 		top: -100vh;
-		/* opacity: 0.9; */
 	}
 	
 	to {
 		top: 10%;
-		/* opacity: 1; */
-	}
-}
-
-@media only screen and (max-width: 1200px)
-{
-	.modal
-	{
-		grid-template-columns: 50%;
-		
-		/* grid-template-rows:  */
-	}
-	
-	nav
-	{
-		max-width: 50%;
-	}
-	
-	td
-	{
-		width: 50%;
-		font-size: 30px;
-	}
-	
-	header img
-	{
-		width: 50%;
-		/* border-radius: 0%; */
-	}
-	
-	.modal img
-	{
-		grid-row-start: 1;
-		grid-row-end: 2;
-		grid-column: span 1;
 	}
 }
 
