@@ -16,6 +16,7 @@ var line2 = document.getElementById("modelLine2");
 var modelA3 = document.getElementById("model3");
 var line3 = document.getElementById("modelLine3");
 
+// var cumToggle = document.getElementsByClassName("cum-switch-wrapper-wrapper")[0];
 
 var twitterPost = document.getElementById("twitterPost");
 
@@ -102,6 +103,18 @@ for (i = 0 ; i < gallery.length ; i++) {
 		{
 			line3.style.display = "none";
 		}
+		
+		
+		// Cum toggle
+		// if (altTab[7])
+		// {
+			// cumToggle.style.display = "block";
+		// }
+		
+		// if (! altTab[7])
+		// {
+			// cumToggle.style.display = "none";
+		// }
 		
 		
 		// Twitter post

@@ -30,6 +30,7 @@
 	--button-shadow-hover: 11px 5px 21px -7px rgba(0,0,0,0.4);
 	--nav-shadow: 2px 2px 15px 4px rgba(0, 0, 0, 1);
 	--nav-buttons-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 1);
+	--slider-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Mode toggle */
@@ -51,11 +52,23 @@
 	--nav-buttons-shadow: 4px 6px 25px 0px rgba(0, 0, 0, 0.2);
 }
 
-.theme-switch-wrapper {
+.theme-switch-wrapper, .cum-switch-wrapper
+{
   display: flex;
   align-items: center;
   position: relative;
   left: 80%;
+}
+
+.cum-switch-wrapper
+{
+	left: 0;
+}
+
+.cum
+{
+	padding-top: 30px;
+	margin-bottom: 0;
 }
 
 em {
@@ -64,18 +77,21 @@ em {
 	text-decoration: none;
   }
 
-.theme-switch {
+.theme-switch, .cum-switch
+{
   display: inline-block;
   height: 34px;
   position: relative;
   width: 65px;
 }
 
-.theme-switch input {
+.theme-switch input, .cum-switch input
+{
   display:none;
 }
 
-.slider {
+.slider
+{
   background-color: var(--tertiary);
   bottom: 0;
   cursor: pointer;
@@ -83,35 +99,71 @@ em {
   position: absolute;
   right: 0;
   top: 0;
-  transition: 0.4s;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: ease-in 0.3s;
+  box-shadow: var(--slider-shadow);
 }
 
-.slider:before {
+.slider:before
+{
   background-color: #fff;
   content: "";
   height: 38px;
+  width: 38px;
   top:-2px;
   position: absolute;
-  transition: 0.4s;
-  width: 38px;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: ease-in 0.3s;
+  box-shadow: var(--slider-shadow);
 }
 
-input:checked + .slider {
-  background-color: var(--accent);
+input:checked + .slider
+{
+  background: var(--accent);
 }
 
 input:checked + .slider:before {
   transform: translateX(30px);
 }
 
-.slider.round {
+.slider.round, .slider.cum
+{
   border-radius: 38px;
 }
 
-.slider.round:before {
+.slider.cum
+{
+	overflow: hidden;
+	margin-top: 10px;
+	padding-bottom: 3px;
+}
+
+.slider.round:before, .slider.cum:before
+{
   border-radius: 50%;
+  box-shadow: var(--shadow-button);
+}
+
+.slider.cum:before
+{
+	height: 25px;
+	width: 25px;
+	top: 4px;
+	left: 5px;
+}
+
+input:checked ~ .slider.cum
+{
+  background-color: rgba(230, 230, 230, 1);
+}
+
+input:checked ~ .slider.cum:before {
+  transform: translateX(30px);
+  background-color: rgba(120, 120, 120, 1);
+  box-shadow: var(--slider-shadow);
+}
+
+input:checked + .slider:before
+{
+	color: var(--tertiary);
 }
 
 html
