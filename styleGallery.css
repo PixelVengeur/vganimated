@@ -12,13 +12,6 @@
 	margin-top: 5%;
 }
 
-.outside p
-{
-	font-size: 30px;
-	border-left: 7px solid var(--accent);
-	background-color: var(--secondary);
-}
-
 .outside img
 {
 	height: 90%;
@@ -89,17 +82,18 @@
 
 .outside p
 {
-	width: 85%;
+	font-size: 30px;
 	padding: 5px;
 	margin: auto;
 	
 	position: absolute;
 	top: 30%;
 	left: 6%;
-	
 	width: 41%;
 	
 	border-radius: 3px;
+	border-left: 7px solid var(--accent);
+	background-color: var(--secondary);
 }
 
 

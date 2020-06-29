@@ -16,7 +16,7 @@ var line2 = document.getElementById("modelLine2");
 var modelA3 = document.getElementById("model3");
 var line3 = document.getElementById("modelLine3");
 
-// var cumToggle = document.getElementsByClassName("cum-switch-wrapper-wrapper")[0];
+var cumToggle = document.getElementsByClassName("cum-switch-wrapper-wrapper")[0];
 
 var twitterPost = document.getElementById("twitterPost");
 
@@ -28,6 +28,8 @@ var backButton = document.getElementById('bckBtn');
 var forwardButton = document.getElementById('fwdBtn');
 var gallery = document.getElementsByClassName('content');
 var i;
+
+const cumSwitch = document.querySelector('.cum-switch input[type="checkbox"]');
 
 for (i = 0 ; i < gallery.length ; i++) {
 	gallery[i].onclick = function()
@@ -41,9 +43,41 @@ for (i = 0 ; i < gallery.length ; i++) {
 		document.getElementById("mem").value=this.id;
 		
 		
+		// Cum Switch
+		function switchCum(e)
+		{
+			if (e.target.checked)
+			{
+				// Replace the modal image with the cum version
+				modalImg.attr('src', filepath + filename[0] + ' - C' + '.' + filename[1]);
+				
+				// Replace "Full Resolution" button's link with the cum version
+				$('#full').attr("href", filepath + filename[0] + ' - C' + '.' + filename[1]);
+				
+				localStorage.setItem('cumState', 'cum');
+			}
+			else
+			{
+				// Replace the modal image with the cumless version
+				modalImg.attr('src', filepath + filename[0] + ' - L' + '.' + filename[1]);
+				
+				// Replace "Full Resolution" button's link with the cumless version
+				$('#full').attr("href", filepath + filename[0] + ' - L' + '.' + filename[1]);
+			
+				localStorage.setItem('cumState', 'nocum');
+			}
+			
+			// cumSwitch.checked = false
+		}
 		
 		
+			
+		cumSwitch.addEventListener('change', switchCum, false);
+		
+		
+		// Split the image alt
 		var altTab = this.alt.split(' : ')
+		
 		
 		// Title
 		
@@ -106,15 +140,15 @@ for (i = 0 ; i < gallery.length ; i++) {
 		
 		
 		// Cum toggle
-		// if (altTab[7])
-		// {
-			// cumToggle.style.display = "block";
-		// }
+		if (altTab[7])
+		{
+			cumToggle.style.display = "block";
+		}
 		
-		// if (! altTab[7])
-		// {
-			// cumToggle.style.display = "none";
-		// }
+		if (! altTab[7])
+		{
+			cumToggle.style.display = "none";
+		}
 		
 		
 		// Twitter post
@@ -143,11 +177,6 @@ for (i = 0 ; i < gallery.length ; i++) {
 		{
 			redditPost.style.display = "none";
 		}
-		
-		
-		// Full resolution
-		
-		$('#full').attr("href", filepath + filename[0] + ' - L' + '.' + filename[1]);
 }};
 
 // Create a "reversed" images array
@@ -183,8 +212,6 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 } 
-
-
 
 
 

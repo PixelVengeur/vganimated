@@ -87,6 +87,11 @@
 
 .overwatch
 {
+	grid-row: span 5;
+}
+
+.misc
+{
 	grid-row: span 4;
 }
 
