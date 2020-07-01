@@ -39,6 +39,7 @@ for (i = 0 ; i < gallery.length ; i++) {
 		var filename = newSrc.substring(newSrc.lastIndexOf('/')+1).split('.'); // Isolating the file name
         var filepath = newSrc.substring(0, newSrc.lastIndexOf('/')+1); // Isolating the directory
 		var imageVersion = filename[0].split('%20-%20') // Isolate the image version
+		
 		// alert("filepath = " + filepath + "\nfilename[0] = " + filename[0] + "\nfilename[1] = " + filename[1] + "\nimageVersion[1] = " + imageVersion[1]);
 		
 		// If the image is the large version, remove that part from the basis
@@ -50,6 +51,8 @@ for (i = 0 ; i < gallery.length ; i++) {
 		modal.style.display = "block";
 		modalImg.attr('src', filepath + filename[0] + ' - L' + '.' + filename[1]);	
 		document.getElementById("mem").value=this.id;
+		
+		$('#full').attr("href", filepath + filename[0] + ' - L' + '.' + filename[1]);
 		
 		
 		// Cum Switch
@@ -75,12 +78,9 @@ for (i = 0 ; i < gallery.length ; i++) {
 			
 				localStorage.setItem('cumState', 'nocum');
 			}
-			
-			// cumSwitch.checked = false
 		}
 		
 		
-			
 		cumSwitch.addEventListener('change', switchCum, false);
 		
 		
