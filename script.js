@@ -60,6 +60,8 @@ for (i = 0 ; i < gallery.length ; i++) {
 		{
 			if (e.target.checked)
 			{
+				modalImg.attr('src', filepath + 'Transition.png');
+				
 				// Replace the modal image with the cum version
 				modalImg.attr('src', filepath + filename[0] + ' - C' + '.' + filename[1]);
 				
