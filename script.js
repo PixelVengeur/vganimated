@@ -63,10 +63,10 @@ for (i = 0 ; i < gallery.length ; i++) {
 				modalImg.attr('src', filepath + 'Transition.png');
 				
 				// Replace the modal image with the cum version
-				modalImg.attr('src', filepath + filename[0] + ' - C' + '.' + filename[1]);
+				modalImg.attr('src', filepath + filename[0] + ' - A' + '.' + filename[1]);
 				
 				// Replace "Full Resolution" button's link with the cum version
-				$('#full').attr("href", filepath + filename[0] + ' - C' + '.' + filename[1]);
+				$('#full').attr("href", filepath + filename[0] + ' - A' + '.' + filename[1]);
 				
 				localStorage.setItem('cumState', 'cum');
 			}
@@ -150,18 +150,6 @@ for (i = 0 ; i < gallery.length ; i++) {
 		}
 		
 		
-		// Cum toggle
-		if (altTab[7])
-		{
-			cumToggle.style.display = "block";
-		}
-		
-		if (! altTab[7])
-		{
-			cumToggle.style.display = "none";
-		}
-		
-		
 		// Twitter post
 		
 		if (altTab[5])
@@ -187,6 +175,18 @@ for (i = 0 ; i < gallery.length ; i++) {
 		if (! altTab[6])
 		{
 			redditPost.style.display = "none";
+		}
+		
+		
+		// Cum toggle
+		if (altTab[7])
+		{
+			cumToggle.style.display = "block";
+		}
+		
+		if (! altTab[7])
+		{
+			cumToggle.style.display = "none";
 		}
 }};
 
