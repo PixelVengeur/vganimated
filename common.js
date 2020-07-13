@@ -1,3 +1,14 @@
+// UI cards
+
+var card = document.getElementsByClassname("card");
+
+card.addEventListener("click", displayModal);
+
+function displayModal()
+{
+    wrapper.style.display = "none";
+}
+
 // Light mode switch
 
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
@@ -24,3 +35,4 @@ if (currentTheme) {
 }
 
 toggleSwitch.addEventListener('change', switchTheme, false);
+

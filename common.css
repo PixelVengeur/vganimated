@@ -10,6 +10,14 @@
 	src: url('./fonts/Poppins/Poppins-Regular.ttf');
 }
 
+@media only screen and (max-width: 768px)
+{
+	*
+	{
+		color: red;
+	}
+}
+
 *
 {
 	color: var(--text-major);
@@ -289,17 +297,65 @@ tr
 
 footer
 {
-	font-size: 15px;
+	flex-direction: column;
+	display: flex;
+	/*font-size: 15px;*/
 	text-align: right;
-	padding: 10px;
+	align-items: center;
+	/*padding: 10px;*/
+	margin: 5px;
+	margin-top: 25px;
 	
-	background-color: var(--secondary);
-	box-shadow: 2px 2px 15px 4px rgba(0, 0, 0, 1);
+	/*background-color: var(--secondary);*/
+	/*box-shadow: var(--nav-shadow);*/
+
+	border-radius: 5px;
 }
 
 footer p
 {
 	color: var(--text-minor);
+}
+
+.links
+{
+	display: grid;
+	height: 10vh;
+	width: 30vw;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-row: 1fr 1fr;
+	grid-column-gap: 3%;
+	
+	font-size: 50px;
+	
+	margin-top: 3%; 
+	align-self: center;
+	padding: 10px;
+}
+
+.links >*, .sheet a
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	margin: 4px;
+	
+	border-radius: 3px;
+	
+	text-align: center;
+}
+
+.links a:first-child
+{
+	box-shadow: none;
+
+	transform: none;
+}
+
+.links a
+{
+	text-decoration: none;
 }
 
 .fab, .fas
@@ -311,7 +367,6 @@ footer p
 	text-align: center;
 	text-decoration: none;
 	margin-left: 25px;
-	color: white;
 	
 	/* border: 0.12em solid rgba(255, 255, 255, 0); */
 	box-shadow: var(--shadow-button);
@@ -320,11 +375,26 @@ footer p
 	transition: 0.2s;
 }
 
-.fas:not(.fa-question):hover, .fab:hover
+span a .fas:not(.fa-question):hover, span a .fab:hover
 {
 	transform: scale(1.1);
 	/* border-color: rgba(255, 255, 255, 0.8); */
 	box-shadow: 11px 5px 21px -7px rgba(0,0,0,0.4);
+}
+
+.links .fas, .links .fab
+{
+	padding: 0;
+	margin-right: 25px;
+	font-size: 45px;
+	width: 0;
+	margin-left: 0;
+	
+	border: 0;
+	border-radius: 0;
+	box-shadow: 0;
+	
+	transition: 0s;
 }
 
 .fa-female
@@ -345,4 +415,9 @@ footer p
 .fa-question
 {
 	background-color: var(--secondary);
+}
+
+.fiverr-logo
+{
+	width: 60px;
 }

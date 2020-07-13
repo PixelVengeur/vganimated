@@ -1,111 +1,23 @@
-.links
+.twitter, .discord, .fiverr, .poizen
 {
-	display: grid;
-	height: 35vh;
-	width: 60%;
-	grid-template-columns: 1fr 1fr;
-	grid-template-row: 1fr 1fr;
-	
-	font-size: 27px;
-	
-	margin: 50px 20% 50px;
-	align-self: center;
-	padding: 10px;
-	
-	background: var(--secondary);
-	border-radius: 3px;
-	box-shadow: var(--nav-shadow);
-}
-
-.links >*
-{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	
-	margin: 4px;
-	
-	border-radius: 3px;
-	box-shadow: var(--shadow-button);
-	
-	text-align: center;
-}
-
-.links div:first-child
-{
-	box-shadow: none;
-}
-
-.links a
-{
-	text-decoration: none;
-}
-
-.speech
-{
-	grid-row-start: 1;
-	grid-row-end: 4;
-}
-
-.twitter, .discord, .fiverr
-{
-	transition: 0.2s;
+	/*transition: 0.2s;*/
 	color: rgba(255, 255, 255, 0.8);
 }
 
-.twitter
+.poizen
 {
-	background-color: rgba(85, 172, 238, 0.8);
+	background-color: rgba(156, 45, 224, 1);
 }
 
-.discord
-{
-	background-color: rgba(45, 48, 53, 1);
-}
-
-.fiverr
-{
-	background-color: rgba(0, 178, 45, 0.8);
-}
-
-.fiverr-logo
-{
-	width: 27px;
-}
-
-.discord:hover, .twitter:hover, .fiverr:hover
-{
-	transform: scale(1.02);
-	
-	box-shadow: var(--button-shadow-hover);
-}
-
-.fas, .fab
-{
-	padding: 0;
-	margin-right: 25px;
-	font-size: 25px;
-	width: 0;
-	text-align: center;
-	text-decoration: none;
-	margin-left: 0;
-	color: white;
-	
-	border: 0;
-	border-radius: 0;
-	box-shadow: 0;
-	
-	transition: 0.2s;
-}
-
-.disclaimer
+.disclaimer, .sheet
 {
 	display: block;
 	width: 52%;
 	align-self: center;
 	font-size: 24px;
-	padding: 0 30px 0px 30px;
-	margin-top: 0;
+	padding: 30px;
+	margin: auto;
+	margin-top: 50px;
 	
 	
 	background: var(--secondary);
@@ -117,10 +29,149 @@
 {
 	color: rgba(255, 0, 0, 0.85);
 	font-size: 30px;
+}
+
+.sheet
+{
+	display: flex;
+	width: 80%;
+
+	flex-direction: column;
+	align-items: center;
+}
+
+.sheet p
+{
+	margin: auto;
+	text-align: center;
+}
+
+.sheet a
+{
+
+	height: 8vh;
+	width: 30vw;
+
+	margin-top: 25px;
 	text-decoration: none;
 }
 
-.disclaimer em
+.sheet img
 {
-	font-size: inherit;
+	position: relative;
+	left: -150px;
+	top: -20px;
+
+	height: 70px;
+	width: 100px;
+
+	opacity: 0.8;
+}
+
+
+/* --- UI Cards --- */
+
+#card-wrapper
+{
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.card
+{
+	display: block;
+	width: 18vw;
+	height: 45vh;
+	background: var(--secondary);
+	/*background: none;*/
+
+	border-radius: 5px;
+	padding: 5px;
+	padding-bottom: 10px;
+	overflow: hidden;
+
+	box-shadow: var(--shadow-button);
+
+	margin: 10px;
+
+	transition: 0.4s;
+}
+
+.card:hover
+{
+	height: 65vh;
+	transform: scale(1.05);
+	cursor: pointer;
+
+	box-shadow: var(--button-shadow-hover);
+}
+
+.card:nth-child(2):hover
+{
+	height: 72vh;
+}
+
+.card:nth-child(3):hover 
+{
+	height: 77vh;
+}
+
+.card:nth-child(4):hover
+{
+	height: 80vh;
+}
+
+.card:hover .examples
+{
+	top: 0;
+}
+
+.card:hover .price p
+{
+	bottom: 0;
+}
+
+.card:hover .tier p
+{
+	font-size: 2rem;
+}
+
+.tier p
+{
+	font-size: 3rem;
+	font-family: Poppins;
+
+	color: rgba(52, 211, 2, 0.8);
+
+	transition: 0.4s;
+}
+
+.description
+{
+	font-size: 1rem;
+}
+
+.examples
+{
+	position: relative;
+	top: 25%;
+	font-family: Poppins;
+	font-size: 1rem;
+
+	transition: 0.4s;
+}
+
+.price p
+{
+	font-size: 3rem;
+	position: relative;
+
+	bottom: -100px;
+
+	transition: 0.6s;
+}
+
+.examples ul
+{
+	list-style-type: none;
 }

@@ -16,7 +16,7 @@
 .model-wrapper >*
 {
 	display: grid;
-	grid-template-columns: 1fr 2fr;
+	grid-template-columns: 1fr 3fr;
 	grid-auto-rows: max-content;
 	text-align: center;
 	
@@ -58,9 +58,11 @@
 	box-shadow: var(--shadow-button);
 	padding: 0.5%;
 	margin: 4px;
-	
-	
-	/* border: 2px solid red; */
+}
+
+.model-wrapper .overwatch div, .model-wrapper .lol div
+{
+	grid-template-columns: 2fr 3fr 3fr 1fr;
 }
 
 .model-wrapper >* div h4
@@ -71,23 +73,29 @@
 	align-self: center;
 }
 
-.model-wrapper >* div span
+.model-wrapper .overwatch div span:nth-child(2n), .model-wrapper .lol div span:nth-child(2n)
 {
 	margin: 1%;
 	padding: 5px;
 }
 
-.model-wrapper >* div span:nth-child(2n)
+.model-wrapper >*:not(.overwatch):not(.lol) div span:nth-child(2n), .model-wrapper .overwatch div span:nth-child(3n),  .model-wrapper .lol div span:nth-child(3n)
 {
 	background: var(--secondary);
 	box-shadow: var(--shadow-button);
 	align-self: center;
 	padding: 5%;
+	margin: 2%;
+}
+
+.model-wrapper .overwatch div span:nth-child(4n), .model-wrapper .lol div span:nth-child(4n)
+{
+	align-self: center;
 }
 
 .overwatch
 {
-	grid-row: span 5;
+	grid-row: span 4;
 }
 
 .misc

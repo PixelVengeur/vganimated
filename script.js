@@ -40,10 +40,10 @@ for (i = 0 ; i < gallery.length ; i++) {
         var filepath = newSrc.substring(0, newSrc.lastIndexOf('/')+1); // Isolating the directory
 		var imageVersion = filename[0].split('%20-%20') // Isolate the image version
 		
-		// alert("filepath = " + filepath + "\nfilename[0] = " + filename[0] + "\nfilename[1] = " + filename[1] + "\nimageVersion[1] = " + imageVersion[1]);
+		// alert("filepath = " + filepath + "\nfilename[0] = " + filename[0] + "\nfilename[1] = " + filename[1] + "\nimageVersion[1] = " + imageVersion[1] + "\nimageversion[2] = " + imageVersion[2]);
 		
 		// If the image is the large version, remove that part from the basis
-		if (imageVersion[1] == 'L')
+		if (imageVersion[1] == 'L' || imageVersion[2] == 'L')
 			{
 				filename[0] = filename[0].replace('%20-%20L','');
 			}
