@@ -55,9 +55,9 @@
 	height: 90%;
 	width: 90%;
 	
-	border: 3px solid transparent;
+	/*border: 3px solid transparent;
 	border-image: linear-gradient(17deg, #F0F, #0F0, #F00, #FF0, #F0F);
-	border-image-slice: 1;
+	border-image-slice: 1;*/
 }
 
 @keyframes hue
