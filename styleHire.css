@@ -73,8 +73,10 @@
 
 #card-wrapper
 {
-	display: flex;
+	display: grid;
 	margin-bottom: 20px;
+
+	grid-template-columns: repeat(4, 1fr); 
 }
 
 .card
@@ -113,12 +115,12 @@
 
 .card:nth-child(3):hover 
 {
-	height: 77vh;
+	height: 80vh;
 }
 
 .card:nth-child(4):hover
 {
-	height: 80vh;
+	height: 83vh;
 }
 
 .card:hover .examples
@@ -133,10 +135,10 @@
 
 .card:hover .tier p
 {
-	font-size: 2rem;
+	font-size: 2.5rem;
 }
 
-.tier p
+.tier p, .rules-tier p
 {
 	font-size: 3rem;
 	font-family: Poppins;
@@ -174,4 +176,71 @@
 .examples ul
 {
 	list-style-type: none;
+}
+
+.extra, .rules
+{
+	background: var(--secondary);
+	border-radius: 5px;
+	box-shadow: var(--shadow-button);
+
+	margin: 2%;
+
+	transition: 0.4s;
+}
+
+.extra
+{
+	grid-column: 1/3;
+}
+
+.extra:hover
+{
+	transform: scale(1.03);
+	box-shadow: var(--button-shadow-hover);
+}
+
+.extra-wrapper
+{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+
+	padding: 2% 5%
+
+	/*border: 2px solid red;*/
+}
+
+.extra-wrapper >*
+{
+	text-align: left;
+}
+
+.extra-wrapper >*:nth-child(2n)
+{
+	text-align: center;
+}
+
+.rules
+{
+	grid-column: 3/5
+}
+
+.rules-wrapper
+{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: 1fr;
+
+	padding: 2% 2% 5%
+}
+
+.rules-wrapper >*
+{
+	text-align: center;
+	/*border: 1px solid white;*/
+}
+
+.rules-tier p
+{
+	color: rgba(255, 0, 0, 0.85);
 }
