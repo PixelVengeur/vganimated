@@ -22,8 +22,6 @@ var twitterPost = document.getElementById("twitterPost");
 
 var redditPost = document.getElementById("redditPost");
 
-var span = document.getElementsByClassName("X")[0];
-
 var backButton = document.getElementById('bckBtn');
 var forwardButton = document.getElementById('fwdBtn');
 var gallery = document.getElementsByClassName('content');
@@ -31,7 +29,8 @@ var i;
 
 const cumSwitch = document.querySelector('.cum-switch input[type="checkbox"]');
 
-for (i = 0 ; i < gallery.length ; i++) {
+for (i = 0 ; i < gallery.length ; i++)
+{
 	gallery[i].onclick = function()
 	{
 		// Retrieving information from the file
@@ -215,11 +214,6 @@ for (i = 0 ; i < gallery.length ; i++) {
 		if(NextImage<0){NextImage=gallery.length-1;}
 		imagesReversed[NextImage].click();
 	}
-
-span.onclick = function()
-{
-	modal.style.display = "none";
-}
 
 window.onclick = function(event) {
   if (event.target == modal) {
