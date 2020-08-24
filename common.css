@@ -28,6 +28,9 @@
 	--primary: rgba(255, 255, 255, 0.03);
 	--secondary: rgba(255, 255, 255, 0.05);
 	--tertiary: rgba(255, 255, 255, 0.12);
+	--tier1: rgba(50, 177, 10, 0.75);
+	--tier2: rgba(255, 204, 0, 0.75);
+	--tier3: rgba(255, 130, 0, 0.75);
 	--accent: #A600BC;
 	--text-minor: rgba(255, 255, 255, 0.38);
 	--text-major: rgba(255, 255, 255, 0.8);

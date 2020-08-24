@@ -12,7 +12,6 @@
 .disclaimer, .sheet
 {
 	display: block;
-	/*display: none;*/
 	width: 52%;
 	align-self: center;
 	font-size: 24px;
@@ -30,6 +29,11 @@
 {
 	color: rgba(255, 0, 0, 0.85);
 	font-size: 30px;
+}
+
+.disclaimer
+{
+	/* margin-top: 50px; */
 }
 
 .sheet
@@ -88,7 +92,7 @@
 	width: 18vw;
 	height: 45vh;
 	background: var(--secondary);
-	/*background: none;*/
+	/* background: none; */
 
 	border-radius: 5px;
 	padding: 5px;
@@ -148,9 +152,10 @@
 	content: '';
 	position: absolute;
 	top: -30%;
+	left: -1%;
 	width: 100%;
 	height: 100%;
-	background: rgba(50, 177, 10, 0.75);
+	background: var(--tier1);
 	clip-path: circle(70% at 65% 0);
 	/*transform: skewY(12deg);*/
 	transition: 0.5s;
@@ -193,6 +198,7 @@
 .examples p
 {
 	font-weight: 900;
+	color:  var(--tier1);
 }
 
 .price p
@@ -205,9 +211,11 @@
 	transition: 0.6s;
 }
 
-.examples ul
+.examples .examples-list
 {
-	list-style-type: none;
+	display: flex;
+	justify-content: center;
+	text-align: center;
 }
 
 .extra, .rules
@@ -282,6 +290,37 @@
 	color: rgba(0, 187, 255, 0.85);
 }
 
+.card:nth-child(2)::before
+{
+	background: var(--tier2);
+}
+
+.card:nth-child(2) .examples p
+{
+	color: var(--tier2);
+}
+
+.card:nth-child(3)::before
+{
+	background: var(--tier3);
+}
+
+.card:nth-child(3) .examples p
+{
+	color: var(--tier3);
+}
+
+.card:nth-child(4)::before
+{
+	background: var(--accent);
+}
+
+.card:nth-child(4) .examples p
+{
+	color: var(--accent);
+}
+
+
 
 
 /* Modal*/
@@ -339,21 +378,6 @@
 	transition: 0.4s;
 }
 
-.card:nth-child(2)::before
-{
-	background: rgba(255, 204, 0, 0.75);
-}
-
-.card:nth-child(3)::before
-{
-	background: rgba(255, 130, 0, 0.75);
-}
-
-.card:nth-child(4)::before
-{
-	background: var(--accent);
-}
-
 [class ^= "modal-image"] img:hover
 {
 	transform: scale(1.02);
@@ -386,4 +410,186 @@
 #tier-level
 {
 	color: rgba(52, 211, 2, 0.8);
+}
+
+.form-wrapper
+{
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+	height: 120%;
+
+	/*border: 2px solid white;*/
+}
+
+form
+{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 2%;
+	width: 40%;
+	min-height: 70vh;
+	/* border: 2px solid red; */
+
+	text-align: center;
+	margin: auto;
+	margin-bottom: 3%;
+	padding: 10px;
+
+	/* overflow: auto; */
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+form::webkot-scrollbar
+{
+	display: none;
+}
+
+form >*
+{
+	align-self: center;
+}
+
+form input[type = text]
+{
+	height: 50%;
+	border: none;
+	background: transparent;
+	border-bottom: 2px solid var(--accent);
+	color: var(--text-major);
+
+}
+
+form h3
+{
+	grid-column: span 2;
+}
+
+input
+{
+	color: rgba(0, 0, 0, 0.8);
+}
+
+input:active
+{
+	border: none;
+}
+
+.radios
+{
+	position: relative;
+	left: -3%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 20px;
+
+	justify-self: center;
+}
+
+.radios >*
+{
+	align-self: center;
+	justify-self: center;
+}
+
+.radios input[type = radio]
+{
+	position: relative;
+	left: 60%;
+	width: 15px;
+}
+
+label
+{
+	/*border-bottom: 2px solid var(--accent);*/
+}
+
+.Definition_header, .Alt_header
+{
+	/*grid-row: span 2;*/
+}
+
+#Description
+{
+	padding: 5px;
+	color: rgba(255, 255, 255, 0.75);
+	font-family: Poppins, sans-serif;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#Description::placeholder
+{
+	color: rgba(216, 216, 216, 1);
+	font-family: Poppins, sans-serif;
+}
+
+input[type = file]
+{
+	color: rgba(255, 255, 255, 0.75);
+}
+
+input[type = reset], button
+{
+	color: rgba(255, 255, 255, 0.75);
+	border: none;
+	background-color: rgba(77, 77, 77, 1);
+	font-size: 22px;
+	border-radius: 50px;
+	height: 110%;
+
+	justify-self: center;
+}
+
+input[type = reset]
+{
+	min-width: 50%;
+}
+
+button
+{
+	background-color: var(--accent);
+	min-width: 30%;
+}
+
+.hidden
+{
+	display: none;
+}
+
+#uploadTrigger
+{
+	display: flex;
+	background-color: rgba(0, 120, 255, 0.4);
+	border-radius: 50px;
+	width: 60%;
+	height: 50%;
+
+	justify-content: center;
+	align-items:  center;
+	justify-self:  center;
+	/* border:  2px solid red; */
+}
+
+#output
+{
+	grid-column: span 2;
+	width: 50%;
+	border: none;
+
+	justify-self: center;
+}
+
+input[type = reset], button, .button
+{
+	box-shadow: var(--shadow-button);
+	cursor: pointer;
+	z-index: 5;
+	transition: 0.3s;
+}
+
+input[type = reset]:hover, button:hover, .button:hover
+{
+	box-shadow: var(--button-shadow-hover);
+	transform: scale(1.03);
 }

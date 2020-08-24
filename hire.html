@@ -70,11 +70,11 @@
 
 							<p> Examples </p>
 
-							<ul>
-								<li/> Solo masturbation
-								<li/> Exhibitionism
-								<li/> Fan Art
-							</ul>
+							<div class = "examples-list">
+								<br/> Solo masturbation
+								<br/> Exhibitionism
+								<br/> Fan Art
+							</div>
 						</div>
 
 						<div class = "price">
@@ -102,11 +102,11 @@
 
 							<p> Examples </p>
 
-							<ul>
-								<li/> Blow | hand | foot | thigh | butt | armpitjob
-								<li/> Vaginal/Anal
-								<li/> Mutual masturbation
-							</ul>
+							<div class = "examples-list">
+								<br/> Blow | hand | foot | thigh | butt | armpitjob
+								<br/> Vaginal/Anal
+								<br/> Mutual masturbation
+							</div>
 						</div>
 
 						<div class = "price">
@@ -134,12 +134,12 @@
 
 							<p> Examples </p>
 
-							<ul>
-								<li/> FMF/MFM threesome
-								<li/> Double &lt;bodypart&gt; job
-								<li/> Lesbian stuff
-								<li/> Mutual masturbation
-							</ul>
+							<div class = "examples-list">
+								<br/> FMF/MFM threesome
+								<br/> Double &lt;bodypart&gt; job
+								<br/> Lesbian stuff
+								<br/> Mutual masturbation
+							</div>
 						</div>
 
 						<div class = "price">
@@ -168,11 +168,11 @@
 
 							<p> Examples </p>
 
-							<ul>
-								<li>Gangbang</li>
-								<li>Spitroasting</li>
-								<li>Double Vaginal/Anal</li>
-							</ul>
+							<div class = "examples-list">
+								<br/> Gangbang
+								<br/> Spitroasting
+								<br/> Double Vaginal/Anal
+							</div>
 
 						</div>
 
@@ -203,7 +203,7 @@
 							<p>Rules</p>	
 						</div>
 						<div class = "rules-wrapper">
-							<span>Transactions done via PayPal in Euros</span>
+							<span>Transactions done upfront via PayPal in Euros</span>
 							<span>No gore</span>
 							<span>No vore</span>
 							<span>No futa</span>
@@ -217,9 +217,9 @@
 				
 				</div>
 
-				<p>Commission me:</p>
+				<!-- <p>Commission me:</p> -->
 
-				<a href = "https://poizen.me/vganimated" target = "_blank" class = "poizen"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 150 150">
+				<!-- <a href = "https://poizen.me/vganimated" target = "_blank" class = "poizen"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 150 150">
 				  <defs>
 				    <style>
 				      .cls-1 {
@@ -229,8 +229,42 @@
 				    </style>
 				  </defs>
 				  <path id="Forme_1" data-name="Forme 1" class="cls-1" d="M63,144L32,74.063,58,20.112H94l24,52.952L87,144H78V87.052s14.416,3.812,15-9.991S79.058,64.672,78,66.071s-6.95,2.175-7,8.992S71,144,71,144H63ZM61,16.116s26.895,0.046,30,0,2-6.994,2-6.994a3.246,3.246,0,0,0-3-3c-2.851-.286-29,0-29,0a2.856,2.856,0,0,0-2,3C59.19,11.494,58.337,16.116,61,16.116Z"/>
-				</svg>&nbsp;PoiZen</a>
+				</svg>&nbsp;PoiZen</a> -->
 		</div>
+
+			<div class = "form-wrapper" id = "form-wrapper">
+				<form name="submit-to-google-sheet" action="" method="post" enctype="multipart/form-data" onsubmit="AJAXSubmit(this); return false;">
+					<h3>Any question or enquiry about a commission?</h3>
+					<p>Contact</p>
+		  			<input name="Contact" type="text" id = "contact" placeholder="Discord tag (preferred), Twitter handle, e-mail address..." required>
+		  			<p>Tier</p>
+		  			<input name="Tier" id = "comTier" type="text" value = "" placeholder="Tier" required>
+		  			<p>Description</p>
+		  			<textarea name="Description" id="Description" cols="20" rows="6" placeholder="Please describe what you would like to commission. Try and include as much detail as possible." required></textarea><!--  You can link a reference image below if needs be."></textarea> -->
+
+		  			<p>Reference image</p>
+
+					<label for="upload_preset" class = "hidden">Unsigned upload Preset: <input type="text" name="upload_preset" value = "nuvmqg7w"></label>
+					<input type="text" name="public_id" class = "hidden" id = "imgName" value = "">
+
+					<input name = "file" type = "file" onchange="loadFile(event)" class = "hidden" id = "uploadFile"/>
+					<label for="uploadFile" class = "button" id = "uploadTrigger"> Upload File </label>
+					<img id = "output">
+
+					<!-- <p class = "Definition_header">4K Render</p>
+					<div class = "radios">
+						<input name = "4K" type = "radio" id = "4KYes" value = "Yes">		<label for = "4KYes">Yes</label>
+						<input name = "4K" type = "radio" id = "4KNo" value = "No">			<label for = "4KNo">No</label>
+					</div>
+					<p class = "Alt_header"> Alternative angles</p>
+					<div class = "radios">
+						<input name = "Alt" type = "radio" id = "AltYes" value = "Yes">		<label for = "AltYes">Yes</label>
+						<input name = "Alt" type = "radio" id = "AltNo" value = "No">		<label for = "AltNo">No</label>
+					</div> -->
+
+		  			<input type="reset">	<button type="submit">Send</button>
+				</form>
+			</div>
 		
 		<div class = "disclaimer">
 			<p>
@@ -272,6 +306,7 @@
 		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src = "common.js"></script>
 		<script src = "hire.js"></script>
+		<script src="https://code.jquery.com/jquery.min.js"></script>
 		<script>document.write('<script src="http://' + (location.host || '${1:localhost}').split(':')[0] + ':${2:35729}/livereload.js?snipver=1"></' + 'script>')</script>
 		
 	</body>
