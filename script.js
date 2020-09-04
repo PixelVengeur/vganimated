@@ -16,7 +16,7 @@ var line2 = document.getElementById("modelLine2");
 var modelA3 = document.getElementById("model3");
 var line3 = document.getElementById("modelLine3");
 
-var cumToggle = document.getElementsByClassName("cum-switch-wrapper-wrapper")[0];
+var altToggle = document.getElementsByClassName("alt-button-wrapper-wrapper")[0];
 
 var twitterPost = document.getElementById("twitterPost");
 
@@ -26,8 +26,10 @@ var backButton = document.getElementById('bckBtn');
 var forwardButton = document.getElementById('fwdBtn');
 var gallery = document.getElementsByClassName('content');
 var i;
+var z;
 
-const cumSwitch = document.querySelector('.cum-switch input[type="checkbox"]');
+var alts = document.getElementsByName("altbox");
+var altButtons = document.getElementsByClassName("alt-button");
 
 for (i = 0 ; i < gallery.length ; i++)
 {
@@ -52,38 +54,36 @@ for (i = 0 ; i < gallery.length ; i++)
 		document.getElementById("mem").value=this.id;
 		
 		$('#full').attr("href", filepath + filename[0] + ' - L' + '.' + filename[1]);
-		
-		
-		// Cum Switch
-		function switchCum(e)
+		$('#full-button').attr("href", filepath + filename[0] + ' - L' + '.' + filename[1]);
+
+		for (z = 0 ; z < alts.length ; z++)
 		{
-			if (e.target.checked)
+			alts[z].onclick = function modalImgReplace()
 			{
-				modalImg.attr('src', filepath + 'Transition.png');
-				
-				// Replace the modal image with the cum version
-				modalImg.attr('src', filepath + filename[0] + ' - A' + '.' + filename[1]);
-				
-				// Replace "Full Resolution" button's link with the cum version
-				$('#full').attr("href", filepath + filename[0] + ' - A' + '.' + filename[1]);
-				
-				localStorage.setItem('cumState', 'cum');
-			}
-			else
-			{
-				// Replace the modal image with the cumless version
-				modalImg.attr('src', filepath + filename[0] + ' - L' + '.' + filename[1]);
-				
-				// Replace "Full Resolution" button's link with the cumless version
-				$('#full').attr("href", filepath + filename[0] + ' - L' + '.' + filename[1]);
-			
-				localStorage.setItem('cumState', 'nocum');
+				if (this.value == 0)
+					{
+						// Replace the modal image with the normal version
+						modalImg.attr('src', filepath + filename[0] + ' - L' + '.' + filename[1]);
+							
+						// Replace "Full Resolution" button's link with the normal version
+						$('#full').attr("href", filepath + filename[0] + ' - L' + '.' + filename[1]);
+					}
+
+				else
+					{
+						// Replace the modal image with the numbered alt version
+						modalImg.attr('src', filepath + filename[0] + ' - A' + this.value + '.' + filename[1]);
+						
+						// Replace "Full Resolution" button's link with the alt version
+						$('#full').attr("href", filepath + filename[0] + ' - A' + this.value + '.' + filename[1]);
+					}
+
+				// Colour code the active image
+				this.parentNode.style.background = "rgba(0, 150, 255, 0.85)";
+				// Remove thecolour code for unchecked elements
+				$(this).parent().siblings().css( "background", "var(--secondary)");
 			}
 		}
-		
-		
-		cumSwitch.addEventListener('change', switchCum, false);
-		
 		
 		// Split the image alt
 		var altTab = this.alt.split(' : ')
@@ -177,17 +177,41 @@ for (i = 0 ; i < gallery.length ; i++)
 		}
 		
 		
-		// Cum toggle
+		// Alt toggle
 		if (altTab[7])
 		{
-			cumToggle.style.display = "block";
+			$(altToggle).css("display", "block");
+			$(altButtons[0]).css("display", "block")
+			$(altButtons[1]).css("display", "block")
 		}
 		
 		if (! altTab[7])
 		{
-			cumToggle.style.display = "none";
+			$(altToggle).css("display", "none");
+		}
+
+		if (altTab[8])
+		{
+			$(altButtons[2]).css("display", "block")
+		}
+		
+		if (! altTab[8])
+		{
+			$(altButtons[2]).css("display", "none")
+		}
+
+		if (altTab[9])
+		{
+			$(altButtons[3]).css("display", "block")
+		}
+		
+		if (! altTab[9])
+		{
+			$(altButtons[3]).css("display", "none")
 		}
 }};
+
+
 
 // Create a "reversed" images array
 	var imagesReversed = [];    
@@ -204,6 +228,7 @@ for (i = 0 ; i < gallery.length ; i++)
 		PreviousImage = parseInt(ImageId[1])+1;
 		if(PreviousImage>gallery.length-1){PreviousImage=0;}
 		imagesReversed[PreviousImage].click();
+		$(alts[0]).click();
 	}
 
 // Substracts 1 from the actual id to get the target image position in the reversed array.
@@ -213,13 +238,42 @@ for (i = 0 ; i < gallery.length ; i++)
 		NextImage = parseInt(ImageId[1])-1;
 		if(NextImage<0){NextImage=gallery.length-1;}
 		imagesReversed[NextImage].click();
+		$(alts[0]).click();
 	}
 
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-} 
+}
 
 
+// Filters
 
+$(document).ready(function()
+{
+	$('.list').click(function()
+	{
+		const value = $(this).attr('data-filter');
+
+		$('.cell').not('.' + value).hide();
+		$('.cell').filter('.' + value).show();
+	})
+})
+
+// Add active effect on selected filter
+$('.list').click(function()
+{
+	$(this).addClass('active').siblings().removeClass('active');
+})
+
+// Update the image tally next to the filter
+var listEntry = document.getElementsByClassName("list");
+
+for (i = 0 ; i < listEntry.length ; i++)
+{
+	var character = $(listEntry[i]).attr("data-filter");
+	var charaCount = document.getElementsByClassName(character);
+	document.getElementsByClassName("tally")[i].innerHTML = charaCount.length;
+}
+// document.getElementsByClassName("tally")[0].innerHTML = imageTally.length; 
