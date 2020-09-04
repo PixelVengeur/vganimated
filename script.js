@@ -92,6 +92,8 @@ for (i = 0 ; i < gallery.length ; i++)
 		// Title
 		
 		imgTitle.innerHTML = altTab[0];
+
+		$('#full-button').attr("download", altTab[0]);
 		
 		
 		// Commissioner
