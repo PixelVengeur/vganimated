@@ -30,6 +30,7 @@ var z;
 
 var alts = document.getElementsByName("altbox");
 var altButtons = document.getElementsByClassName("alt-button");
+var toggle = 0;
 
 for (i = 0 ; i < gallery.length ; i++)
 {
@@ -67,6 +68,8 @@ for (i = 0 ; i < gallery.length ; i++)
 							
 						// Replace "Full Resolution" button's link with the normal version
 						$('#full').attr("href", filepath + filename[0] + ' - L' + '.' + filename[1]);
+						// Replace the download button's link with the normal version
+						$('#full-button').attr("href", filepath + filename[0] + ' - L' + '.' + filename[1]);
 					}
 
 				else
@@ -76,12 +79,14 @@ for (i = 0 ; i < gallery.length ; i++)
 						
 						// Replace "Full Resolution" button's link with the alt version
 						$('#full').attr("href", filepath + filename[0] + ' - A' + this.value + '.' + filename[1]);
+						// Replace the download button's link with the alt version
+						$('#full-button').attr("href", filepath + filename[0] + ' - A' + this.value + '.' + filename[1]);
 					}
 
-				// Colour code the active image
-				this.parentNode.style.background = "rgba(0, 150, 255, 0.85)";
-				// Remove thecolour code for unchecked elements
+				// Remove the colour code for unchecked elements
 				$(this).parent().siblings().css( "background", "var(--secondary)");
+				// Colour code the active image button
+				this.parentNode.style.background = "rgba(0, 150, 255, 0.85)";
 			}
 		}
 		
@@ -98,121 +103,42 @@ for (i = 0 ; i < gallery.length ; i++)
 		
 		// Commissioner
 		
-		if (altTab[1]);
-		{
-			imgCom.innerHTML = altTab[1];
-		}
-		
-		if (! altTab[1])
-		{
-			imgCom.innerHTML = 'Anonymous';
-		}
-		
+		altTab[1] ? imgCom.innerHTML = altTab[1] : imgCom.innerHTML = 'Anonymous';
 		
 		// Model 1	
 		
-		if (altTab[2]);
-		{
-			line1.style.display = "block";
-			modelA1.innerHTML = altTab[2];
-		}
-		
-		if (! altTab[2])
-		{
-			line1.style.display = "none";
-		}
-		
+		altTab[2] ? (line1.style.display  = "flex", modelA1.innerHTML = altTab[2]) : line1.style.display = "none";
 		
 		// Model 2
 		
-		if (altTab[3])
-		{
-			line2.style.display = "block";
-			modelA2.innerHTML = altTab[3];
-		}
-		
-		if (! altTab[3])
-		{
-			line2.style.display = "none";
-		}
-		
+		altTab[3] ? (line2.style.display  = "flex", modelA2.innerHTML = altTab[3]) : line2.style.display = "none";
 		
 		// Model 3
-		
-		if (altTab[4])
-		{
-			line3.style.display = "block";
-			modelA3.innerHTML = altTab[4];
-		}
-		
-		if (! altTab[4])
-		{
-			line3.style.display = "none";
-		}
-		
+
+		altTab[4] ? (line3.style.display  = "flex", modelA3.innerHTML = altTab[4]) : line3.style.display = "none";
 		
 		// Twitter post
 		
-		if (altTab[5])
-		{
-			twitterPost.style.display = "flex";
-			$('#twitterPost').attr("href", altTab[5]);
-		}
-		
-		if (! altTab[5])
-		{
-			twitterPost.style.display = "none";
-		}
-		
-		
+		altTab[5] ? (twitterPost.style.display  = "flex", $('#twitterPost').attr("href", altTab[5])) : twitterPost.style.display = "none";
+
 		// Reddit post
-		
-		if (altTab[6])
-		{
-			redditPost.style.display = "flex";
-			$('#redditPost').attr("href", altTab[6]);
-		}
-		
-		if (! altTab[6])
-		{
-			redditPost.style.display = "none";
-		}
-		
+
+		altTab[6] ? (redditPost.style.display  = "flex", $('#redditPost').attr("href", altTab[6])) : redditPost.style.display = "none";
 		
 		// Alt toggle
-		if (altTab[7])
-		{
-			$(altToggle).css("display", "block");
-			$(altButtons[0]).css("display", "block")
-			$(altButtons[1]).css("display", "block")
-		}
 		
-		if (! altTab[7])
-		{
-			$(altToggle).css("display", "none");
-		}
+		altTab[7] ?
+		(
+			$(altToggle).css("display", "block"),
+			$(altButtons[0]).css("display", "block"),
+			$(altButtons[1]).css("display", "block")) : $(altToggle).css("display", "none");
+		
+		altTab[8] ? $(altButtons[2]).css("display", "block") : $(altButtons[2]).css("display", "none");
 
-		if (altTab[8])
-		{
-			$(altButtons[2]).css("display", "block")
-		}
-		
-		if (! altTab[8])
-		{
-			$(altButtons[2]).css("display", "none")
-		}
+		altTab[9] ? $(altButtons[3]).css("display", "block") : $(altButtons[3]).css("display", "none");
 
-		if (altTab[9])
-		{
-			$(altButtons[3]).css("display", "block")
-		}
-		
-		if (! altTab[9])
-		{
-			$(altButtons[3]).css("display", "none")
-		}
+		altTab[10] ? $(altButtons[4]).css("display", "block") : $(altButtons[4]).css("display", "none");
 }};
-
 
 
 // Create a "reversed" images array
@@ -243,32 +169,71 @@ for (i = 0 ; i < gallery.length ; i++)
 		$(alts[0]).click();
 	}
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+	window.onclick = function(event)
+	{
+  		if (event.target == modal)
+  		{
+    		modal.style.display = "none";
+  		}
+	}
 
 
 // Filters
 
 $(document).ready(function()
 {
-	$('.list').click(function()
-	{
-		const value = $(this).attr('data-filter');
+  $('.list').click(function()
+  {
+  	var filterArray = [];
+    const value = $(this).attr('data-filter');
 
-		$('.cell').not('.' + value).hide();
-		$('.cell').filter('.' + value).show();
-	})
+    if ($(this).children("input").is(":checked"))
+    {
+      $(this).addClass('active');
+    }
+    else
+    {
+      $(this).removeClass("active");
+    }
+
+    if($(this).attr("data-filter") == "cell")
+    {
+      $(this).siblings().children("input").prop("checked", false);
+      $(this).siblings().removeClass("active");
+    }
+    else
+    {
+      $(this).siblings("label[data-filter = 'cell']").children("input").prop("checked", false);
+      $(this).siblings("label[data-filter = 'cell']").removeClass("active");
+    }
+    $(".list").each(function()
+    {
+    	var filter = $(this).attr("data-filter");
+    	if ($(this).children("input").is(":checked"))
+      {
+      	console.log(filterArray.indexOf(filter));
+      	//$(".cell").filter("." + $(this).attr("data-filter")).show();
+        if (filterArray.indexOf(filter) == -1)
+        {
+					filterArray.push(filter);
+        }
+        else
+        {
+          //$(".cell").filter("." + $(this).attr("data-filter")).hide();
+            filterArray.splice(filterArray.indexOf(filter), 1);
+        }
+      }
+    })
+
+    $(".cell").hide();
+
+    for (i = 0 ; i < filterArray.length ; i++)
+    {
+    	$("." + filterArray[i]).show();
+    }
+    // console.log(filterArray.length);
+  })
 })
-
-// Add active effect on selected filter
-$('.list').click(function()
-{
-	$(this).addClass('active').siblings().removeClass('active');
-})
-
 // Update the image tally next to the filter
 var listEntry = document.getElementsByClassName("list");
 
@@ -276,6 +241,5 @@ for (i = 0 ; i < listEntry.length ; i++)
 {
 	var character = $(listEntry[i]).attr("data-filter");
 	var charaCount = document.getElementsByClassName(character);
-	document.getElementsByClassName("tally")[i].innerHTML = charaCount.length;
+	document.getElementsByClassName("tally")[i].innerHTML = "(" + charaCount.length + ")";
 }
-// document.getElementsByClassName("tally")[0].innerHTML = imageTally.length; 

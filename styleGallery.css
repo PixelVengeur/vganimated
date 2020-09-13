@@ -35,7 +35,7 @@
 	box-shadow: 6px 6px 25px 4px rgba(0,0,0,0.18);
 }
 
-.outside .cell:nth-child(2)
+.outside .cell:nth-child(1)
 {
 	grid-column: span 3;
 	grid-row: span 2;
@@ -43,7 +43,7 @@
 	
 }
 
-.outside .cell:nth-child(2) img
+.outside .cell:nth-child(1) img
 {
 	position: relative;
 	margin-top: 20px;
@@ -95,15 +95,12 @@
 	display: flex;
 
 	position: absolute;
-	top: 22%;
-	left: 49%;
-	width: 45%;
-
-	/* background-color: red; */
+	top: 25%;
+	/* width: 45%; */
 	flex-wrap: wrap;
 }
 
-.filters li
+.filters label
 {
 	list-style: none;
 	background: var(--primary);
@@ -116,9 +113,25 @@
 	transition: 0.3s;
 }
 
-.filters li.active
+.filters label
+{
+	padding-left: 0;
+}
+
+.filters input
+{
+	opacity: 0;
+}
+
+.filters label.active
 {
 	background: var(--accent);
+}
+
+.filters span
+{
+	font-size: 18px;
+	display: none;
 }
 
 .alt-button-wrapper
@@ -138,8 +151,9 @@
 {
 	background: var(--secondary);
 	text-align: center;
+	font-size: 23px;
 
-	width: 11%;
+	width: 13%;
 	margin: 5px;
 	border-radius: 15%;
 	cursor: pointer;
@@ -148,6 +162,11 @@
 .alt-button:nth-child(1)
 {
 	text-decoration: bold;
+}
+
+.alt-button:nth-child(5)
+{
+	padding-right: 10px;
 }
 
 .alt-button:hover
@@ -369,9 +388,17 @@
 	margin-left: 20px;
 }
 
-.fa-download
+.fa-download, .fa-vr-cardboard
 {
 	box-shadow: none;
+	margin: 0;
+	border-radius: 2px;
+}
+
+.fa-vr-cardboard
+{
+	font-size: 20px;
+	cursor: pointer;
 }
 
 .fa-chevron-left, .fa-chevron-right
