@@ -196,8 +196,8 @@
 	margin: auto;
 	border-radius: 5px;
 	
-	width: 86%;
-	height: 86%;
+	width: 86vw;
+	height: 86vh;
 	z-index: 1;
 	position: absolute;
 	top: 7%;
@@ -218,17 +218,6 @@
 	animation-duration: 0.6s;
 	
 	overflow: hidden;
-}
-
-@keyframes closeup
-{
-	from {
-		top: -100vh;
-	}
-	
-	to {
-		top: 7%;
-	}
 }
 
 .modal >*
@@ -425,7 +414,7 @@
 }
 
 
-@media only screen and (max-width: 768px)
+/* @media only screen and (max-width: 768px)
 {
 	nav
 	{
@@ -464,15 +453,9 @@
 		overflow: auto;
 	}
 
-	.modal >*
-	{
-		/*border: 1px solid red;*/
-	}
-
 	#modal-img
 	{
 		grid-row-start: 3;
-		/*grid-row-end: 6;*/
 	}
 
 	#bckBtn, #fwdBtn
@@ -484,4 +467,188 @@
 	{
 		grid-column: span 1;
 	}
+} */
+
+.fetish-form
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2rem;
+	text-align: center;
+
+	width: 60vw;
+	height: 50vh;
+	align-self: center;
+
+	background: var(--primary);
+	border-radius: 5px;
+
+	padding: 2vw;
+	padding-top: 0;
+
+}
+
+.fetish-form >*:first-child
+{
+	font-size: 1.4rem;	
+}
+
+.fetish-form a
+{
+	display: flex;
+	justify-content: center;
+	font-size: 1.4rem;
+	text-decoration: none;
+	border-radius: 5px;
+	background: var(--accent);
+	box-shadow: var(--shadow-button);
+
+	width: 20vw;
+
+	padding: 1vw;
+	margin-top: 1.5vh;
+	animation: bobble;
+	animation-duration: 5s;
+  	animation-iteration-count: infinite;
+  	animation-timing-function: ease;
+}
+
+.fetish-form a:hover
+{
+	transform: scale(1.02);
+	box-shadow: var(--button-shadow-hover);
+}
+@keyframes bobble
+{
+	0%
+	{
+		transform: scale(1);
+	}
+	
+	50%
+	{
+		transform: scale(1.07);
+	}
+	
+	100%
+	{
+		transform: scale(1);
+	}
+}
+
+@media screen and (max-width: 768px)
+{
+	.filters
+	{
+		width: 70%;
+		top: 7%;
+	}
+
+	.outside
+	{
+		margin: 0;
+		margin-top: 20%;
+		grid-template-rows: repeat(5, 25vh);
+	}
+
+	.outside .cell:nth-child(1)
+	{
+		grid-column: span 2;
+		grid-row: span 2;
+	}
+
+	.modal
+	{
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(auto-fill, 1fr);
+		text-align: center;
+	}
+
+	#modal-img
+	{
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+
+	#title
+	{
+		height: 30%;
+		grid-row-start: 3;
+		grid-row-end: 4;
+		grid-column: span 3;
+	}
+
+	.info, .author, .model, .close
+	{
+		display: none;
+	}
+
+	#modelLine1, #modelLine2, #modelLine3
+	{
+		height: 0;
+		width: 0;
+		opacity: 0;
+	}
+
+	.alt-button-wrapper, .originalPost, .twitter, .reddit
+	{
+		justify-content: center;
+	}
+
+}
+
+@media screen and (max-width: 767px)
+{
+	.filters
+	{
+		display: none;
+	}
+
+	.outside
+	{
+		margin-top: -20%;
+	}
+
+	.outside .cell:nth-child(3n)
+	{
+		grid-column: span 1;
+	}
+
+	.modal
+	{
+		overflow: auto;
+	}
+
+	#modal-img
+	{
+		grid-column: span 3;
+		width: 100%;
+		height: 100%;
+	}
+
+	.fas .fa-chevron-left
+	{
+		display: none;
+	}
+
+	.close, .originalPost, .button
+	{
+		display: none;
+	}
+
+	.twitter, .reddit
+	{
+		height: 0;
+		width: 0;
+		opacity: 0;
+	}
+}
+
+model-viewer
+{
+	width: 80vw;
+	height: 80vh;
+	align-self: center;
 }

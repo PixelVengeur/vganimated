@@ -15,7 +15,7 @@ for (i = 0 ; i < card.length ; i++)
     card[i].onclick = function()
     {
     	comTier.value = "Tier " + cardId;
-    	document.getElementById("form-wrapper").scrollIntoView({ behavior: 'smooth', block: 'start'});
+    	// document.getElementById("form-wrapper").scrollIntoView({ behavior: 'smooth', block: 'start'});
 
     	// tierLevel.innerHTML = "Tier " + cardId;
     	// switch (cardId)

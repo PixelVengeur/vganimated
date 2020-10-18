@@ -125,17 +125,23 @@ for (i = 0 ; i < gallery.length ; i++)
 
 		altTab[6] ? (redditPost.style.display  = "flex", $('#redditPost').attr("href", altTab[6])) : redditPost.style.display = "none";
 		
-		// Alt toggle
-		
-		altTab[7] ?
-		(
-			$(altToggle).css("display", "block"),
+		// Alt 1
+
+		(altTab[7] || altTab[8] || altTab[9] || altTab[10]) ? (
 			$(altButtons[0]).css("display", "block"),
-			$(altButtons[1]).css("display", "block")) : $(altToggle).css("display", "none");
+			$(altToggle).css("display", "block")) : $(altToggle).css("display", "none");
 		
+		altTab[7] ? $(altButtons[1]).css("display", "block") : $(altButtons[1]).css("display", "none");
+		
+		// Alt 2
+
 		altTab[8] ? $(altButtons[2]).css("display", "block") : $(altButtons[2]).css("display", "none");
 
+		// Alt 3
+
 		altTab[9] ? $(altButtons[3]).css("display", "block") : $(altButtons[3]).css("display", "none");
+
+		// Alt VR
 
 		altTab[10] ? $(altButtons[4]).css("display", "block") : $(altButtons[4]).css("display", "none");
 }};
@@ -149,22 +155,58 @@ for (i = 0 ; i < gallery.length ; i++)
 		imagesReversed.push(gallery[i]);
 	}
 
-// Adds 1 from the actual id to get the target image position in the reversed array.
-	backButton.onclick = function()
+// Arrow key image change
+	document.addEventListener("keydown", checkKey);
+
+	function checkKey(e)
+	{
+		e = event.key;
+		console.log(e);
+		switch(e)
+		{
+			case "ArrowLeft":
+			{
+				prevImage();
+				break;			
+			}
+
+			case "ArrowRight":
+			{
+				nextImage();
+				break;
+			}
+
+			default:
+				break;
+		}
+	}
+
+// Adds 1 to the actual id to get the target image position in the reversed array.
+	backButton.onclick = prevImage;
+
+	function prevImage()
 	{
 		ImageId = document.getElementById("mem").value.split("-");
 		PreviousImage = parseInt(ImageId[1])+1;
-		if(PreviousImage>gallery.length-1){PreviousImage=0;}
+		if(PreviousImage>gallery.length-1)
+			{
+				PreviousImage=0;
+			}
 		imagesReversed[PreviousImage].click();
 		$(alts[0]).click();
 	}
 
 // Substracts 1 from the actual id to get the target image position in the reversed array.
-	forwardButton.onclick = function()
+	forwardButton.onclick = nextImage;
+
+	function nextImage()
 	{
 		ImageId = document.getElementById("mem").value.split("-");
 		NextImage = parseInt(ImageId[1])-1;
-		if(NextImage<0){NextImage=gallery.length-1;}
+		if(NextImage<0)
+			{
+				NextImage=gallery.length-1;
+			}
 		imagesReversed[NextImage].click();
 		$(alts[0]).click();
 	}
@@ -176,6 +218,18 @@ for (i = 0 ; i < gallery.length ; i++)
     		modal.style.display = "none";
   		}
 	}
+
+// Prevent alt change when pressing arrow keys
+
+$('input[type="radio"]').keydown(function(e)
+{
+    var arrowKeys = [37, 38, 39, 40];
+    if (arrowKeys.indexOf(e.which) !== -1)
+    {
+        $(this).blur();
+        return false;
+    }
+});
 
 
 // Filters
@@ -234,6 +288,7 @@ $(document).ready(function()
     // console.log(filterArray.length);
   })
 })
+
 // Update the image tally next to the filter
 var listEntry = document.getElementsByClassName("list");
 
@@ -242,4 +297,12 @@ for (i = 0 ; i < listEntry.length ; i++)
 	var character = $(listEntry[i]).attr("data-filter");
 	var charaCount = document.getElementsByClassName(character);
 	document.getElementsByClassName("tally")[i].innerHTML = "(" + charaCount.length + ")";
+}
+
+//Close the modal image with the X
+var span = document.getElementsByClassName("X")[0];
+
+span.onclick = function()
+{
+    modal.style.display = "none";
 }

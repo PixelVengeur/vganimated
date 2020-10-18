@@ -39,7 +39,6 @@
 .sheet
 {
 	display: flex;
-	/*display: none;*/
 	width: 80%;
 
 	flex-direction: column;
@@ -92,7 +91,6 @@
 	width: 18vw;
 	height: 45vh;
 	background: var(--secondary);
-	/* background: none; */
 
 	border-radius: 5px;
 	padding: 5px;
@@ -107,7 +105,7 @@
 	transition: 0.4s;
 }
 
-.card:hover
+.card:hover, .card:active
 {
 	height: 80vh;
 	/*transform: scale(1.05);*/
@@ -117,32 +115,32 @@
 	box-shadow: var(--button-shadow-hover);
 }
 
-.card:nth-child(2):hover
+.card:nth-child(2):hover, .card:nth-child(2):active
 {
 	height: 87vh;
 }
 
-.card:nth-child(3):hover 
+.card:nth-child(3):hover, .card:nth-child(2):active
 {
 	height: 95vh;
 }
 
-.card:nth-child(4):hover
+.card:nth-child(4):hover, .card:nth-child(2):active
 {
 	height: 100vh;
 }
 
-.card:hover .examples
+.card:hover .examples, .card:active .examples
 {
 	top: 10%;
 }
 
-.card:hover .price p
+.card:hover .price p, .card:active .price p
 {
-	bottom: -130%;
+	bottom: -30%;
 }
 
-.card:hover .tier p
+.card:hover .tier p, .card:active .tier p
 {
 	font-size: 2.5rem;
 }
@@ -152,18 +150,18 @@
 	content: '';
 	position: absolute;
 	top: -30%;
-	left: -1%;
+	left: -0%;
 	width: 100%;
 	height: 100%;
 	background: var(--tier1);
 	clip-path: circle(70% at 65% 0);
-	/*transform: skewY(12deg);*/
+	/* transform: skewY(12deg); */
 	transition: 0.5s;
 
 	z-index: -1;
 }
 
-.card:hover::before
+.card:hover::before, .card:active::before
 {
 	top: -35%;
 	clip-path: circle(120% at 85% -43%);
@@ -277,7 +275,7 @@
 .rules-wrapper >*
 {
 	text-align: center;
-	/*border: 1px solid white;*/
+	/* border: 1px solid white; */
 }
 
 .rules-tier p
@@ -592,4 +590,55 @@ input[type = reset]:hover, button:hover, .button:hover
 {
 	box-shadow: var(--button-shadow-hover);
 	transform: scale(1.03);
+}
+
+@media screen and (max-width: 768px)
+{
+	#card-wrapper
+	{
+		grid-template-columns: repeat(2, 1fr);
+		padding: 2vw;
+	}
+
+	.card
+	{
+		width: 35vw;
+		height: 40vh;
+	}
+
+	.extra, .rules
+	{
+		grid-column: span 1;
+	}
+
+	.rules
+	{
+		/* max-height: 60vh; */
+	}
+}
+
+@media screen and (max-width: 767px)
+{
+	#card-wrapper
+	{
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+	}
+
+	.card
+	{
+		width: 100%;
+		margin: auto;
+		margin-bottom: 3vh;
+	}
+
+	form
+	{
+		display: none;
+	}
+
+	.disclaimer
+	{
+		width: 75vw;	}
 }
