@@ -640,5 +640,36 @@ input[type = reset]:hover, button:hover, .button:hover
 
 	.disclaimer
 	{
-		width: 75vw;	}
+		width: 75vw;
+	}
+
+	.card:nth-child(1)
+	{
+		height: 70vh;
+	}
+
+	.card:nth-child(2)
+	{
+		height: 80vh;
+	}
+
+	.card:nth-child(3)
+	{
+		height: 85vh;
+	}
+
+	.card:nth-child(4)
+	{
+		height: 85vh;
+	}
+
+	.examples
+	{
+		top: 9%;
+	}
+
+	.card .price p
+	{
+		bottom: -20%;
+	}
 }

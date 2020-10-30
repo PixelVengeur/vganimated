@@ -116,7 +116,7 @@
 	grid-column: span 2;
 }
 
-.overwatch div:nth-child(10), .overwatch div:nth-child(14)
+/* .overwatch div:nth-child(10), .overwatch div:nth-child(14)
 {
 	grid-row: span 2;
 }
@@ -124,6 +124,21 @@
 .overwatch div:nth-child(15), .overwatch div:nth-child(9)
 {
 	grid-row: span 4;
+} */
+
+.overwatch div:nth-child(2), .overwatch div:nth-child(3), .overwatch div:nth-child(7), .overwatch div:nth-child(15)
+{
+	grid-row: span 2;
+}
+
+.overwatch div:nth-child(11)
+{
+	grid-row: span 3;
+}
+
+.overwatch div:nth-child(10), .overwatch div:nth-child(16)
+{
+	grid-row: span 5;
 }
 
 .misc
@@ -295,4 +310,27 @@ rect
 	{
 		font-size: 0.9rem;
 	}
+
+	.model-wrapper
+	{
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(auto-fill, minmax(1fr, 1vh));
+	}
+
+	.overwatch
+	{
+		grid-row: span 10;
+		grid-column: span 1;
+	}
+
+	.variant
+	{
+		display: none;
+	}
+
+	.model-wrapper .overwatch div, .model-wrapper .lol div
+	{
+		grid-template-columns: 2fr 3fr 1fr;
+	}
+
 }
