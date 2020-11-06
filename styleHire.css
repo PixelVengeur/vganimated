@@ -17,7 +17,7 @@
 	font-size: 24px;
 	padding: 30px;
 	margin: auto;
-	margin-top: 50px;
+	margin-top: 2%;
 	
 	
 	background: var(--secondary);
@@ -120,12 +120,12 @@
 	height: 87vh;
 }
 
-.card:nth-child(3):hover, .card:nth-child(2):active
+.card:nth-child(3):hover, .card:nth-child(3):active
 {
 	height: 95vh;
 }
 
-.card:nth-child(4):hover, .card:nth-child(2):active
+.card:nth-child(4):hover, .card:nth-child(4):active
 {
 	height: 100vh;
 }
@@ -265,11 +265,9 @@
 
 .rules-wrapper
 {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-auto-rows: 1fr;
-
-	padding: 2% 2% 5%;
+	display: flex;
+	flex-direction: column;
+	padding: 2%;
 }
 
 .rules-wrapper >*
@@ -648,17 +646,17 @@ input[type = reset]:hover, button:hover, .button:hover
 		height: 70vh;
 	}
 
-	.card:nth-child(2)
+	.card:nth-child(2), .card:nth-child(2):hover, .card:nth-child(2):active
 	{
 		height: 80vh;
 	}
 
-	.card:nth-child(3)
+	.card:nth-child(3), .card:nth-child(3):hover, .card:nth-child(3):active
 	{
 		height: 85vh;
 	}
 
-	.card:nth-child(4)
+	.card:nth-child(4), .card:nth-child(4):hover, .card:nth-child(4):active
 	{
 		height: 85vh;
 	}
@@ -666,10 +664,12 @@ input[type = reset]:hover, button:hover, .button:hover
 	.examples
 	{
 		top: 9%;
-	}
 
-	.card .price p
+		margin-bottom: 10%;
+	}
+	
+	.price p
 	{
-		bottom: -20%;
+		bottom: -30%;
 	}
 }
