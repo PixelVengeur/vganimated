@@ -22,16 +22,13 @@ for (i = 0 ; i < models.length ; i++)
 		$(".gallery-button").children("a").attr("href", $(this).children("a").attr('alt'))
 
 		let modelToCleanup = this.innerHTML.split(">")[1];
-
 		console.log("modelToCleanup = " + modelToCleanup);
-
 		let cleanModel = modelToCleanup.split("<")[0];
-
 		console.log("cleanModel = " + cleanModel); 
 
 		document.getElementsByClassName("modal-title")[0].innerHTML = this.innerHTML;
 
-		$("#lazy-load").attr("src", "models/" + cleanModel + ".glb");
+		// $("#lazy-load").attr("src", "models/" + cleanModel + ".glb");
 	}
 }
 
