@@ -61,6 +61,8 @@
 	box-shadow: var(--shadow-button);
 	padding: 0.5%;
 	margin: 4px;
+
+	transition: 0.2s;
 }
 
 .model-wrapper >* div:hover
@@ -89,6 +91,13 @@
 	text-decoration-thickness: 3px;
 	text-decoration-skip: box-decoration;
 	text-decoration-skip-ink: auto; */
+
+	transition: 0.2s;
+}
+
+.model-wrapper >* div h4 a:hover
+{
+	color: #fff;
 }
 
 .variant
