@@ -64,7 +64,7 @@ window.onclick = function(event) {
 
 
 // Form to send to G Sheets
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyVaTjEUcYlX5cKVYek-RqKozNzsBvOdrhCmiKph7kBRnUdh0Op/exec'
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzjqVgkPpRrOMwwbPs9gjeK0YCxGro3fpH9B2YWbBY4SzKP_JA/exec'
 const form = document.forms['submit-to-google-sheet']
 
 form.addEventListener('submit', e =>

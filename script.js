@@ -264,19 +264,19 @@ $(document).ready(function()
     {
     	var filter = $(this).attr("data-filter");
     	if ($(this).children("input").is(":checked"))
-      {
-      	console.log(filterArray.indexOf(filter));
-      	//$(".cell").filter("." + $(this).attr("data-filter")).show();
-        if (filterArray.indexOf(filter) == -1)
-        {
+	      {
+	      	console.log(filterArray.indexOf(filter));
+	      	//$(".cell").filter("." + $(this).attr("data-filter")).show();
+	        if (filterArray.indexOf(filter) == -1)
+		        {
 					filterArray.push(filter);
-        }
-        else
-        {
-          //$(".cell").filter("." + $(this).attr("data-filter")).hide();
-            filterArray.splice(filterArray.indexOf(filter), 1);
-        }
-      }
+		        }
+	        else
+		        {
+		          //$(".cell").filter("." + $(this).attr("data-filter")).hide();
+		            filterArray.splice(filterArray.indexOf(filter), 1);
+		        }
+	      }
     })
 
     $(".cell").hide();

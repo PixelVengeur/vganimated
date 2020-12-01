@@ -4,7 +4,7 @@
 {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-	grid-template-rows: repeat(5, 350px);
+	grid-template-rows: repeat(10, 50vh);
 	grid-auto-flow: dense;
 	
 	text-align: center;
@@ -422,15 +422,15 @@
 	font-size: 1.2rem;
 	text-align: center;
 
-	width: 60vw;
+	width: 70vw;
 	height: 50vh;
 	align-self: center;
 
 	background: var(--primary);
 	border-radius: 5px;
 
-	padding: 2vw;
-	padding-top: 0;
+	padding: 3vw;
+	padding-top: 1vw;
 
 }
 
@@ -449,7 +449,7 @@
 	background: var(--accent);
 	box-shadow: var(--shadow-button);
 
-	width: 20vw;
+	width: 30vw;
 
 	padding: 1vw;
 	margin-top: 1.5vh;

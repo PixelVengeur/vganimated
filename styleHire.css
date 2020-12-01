@@ -548,6 +548,11 @@ button
 	min-width: 30%;
 }
 
+button:onclick
+{
+	background-color: white;
+}
+
 .hidden
 {
 	display: none;
