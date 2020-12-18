@@ -99,6 +99,15 @@ window.AJAXSubmit = function (formElement)
 	xhr.send(new FormData(formElement));
 }
 
+// Acknowledge upload on button
+
+$('button').on("click", function()
+{
+    console.log("Prout");
+    $(this).hmtl("Sent!");
+})
+
+
 // Copy contact name to be the title of the image
 var contact = document.getElementById("contact");
 var imgName = document.getElementById("imgName");
