@@ -1,0 +1,101 @@
+.link-cards-wrapper
+{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+	grid-template-rows: repeat(2, 35vh);
+	grid-auto-flow: dense;
+	grid-gap: 1vw;
+
+	padding: 10vw;
+	padding-top: 3vw;
+}
+
+.link-card
+{
+	display: flex;
+	border-radius: 5px;
+	justify-content: center;
+	align-items: center;
+
+	box-shadow: var(--shadow-button);
+	transition: 0.2s;
+}
+
+.link-card:hover
+{
+	cursor: pointer;
+	box-shadow: var(--button-shadow-hover);
+
+	transform: scale(1.02);
+}
+
+.twitter
+{
+	background-color: rgba(85, 172, 238, 0.8);
+}
+
+.reddit
+{
+	background-color: rgba(255, 69, 0, 0.9);
+}
+
+.discord
+{
+	background-color: rgba(44, 47, 51, 0.9);
+}
+
+.deviantart
+{
+	background-color: rgba(5, 204, 71, 0.9);
+}
+
+.archive
+{
+	background-color: var(--accent);
+}
+
+.placeholder
+{
+	background-color: rgba(244, 17, 115, 0.9);
+}
+
+.links .discord, .links .reddit
+{
+	background-color: transparent;
+}
+
+.fab, .fas
+{
+	background: none;
+	font-size: 5rem;
+
+	/* box-shadow: inset 5px 5px 5px -4px; */
+	box-shadow: none;
+
+	/* padding: 10px; */
+	
+	border: 2px solid red;
+	/* border-radius: 0; */
+}
+
+@media screen and (max-width: 767px)
+{
+	.link-cards-wrapper
+	{
+		grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
+		grid-template-rows: repeat(3, 20vh);
+		grid-gap: 2vw;
+
+		padding-top: 5vh;
+	}
+
+	.fab, .fas
+	{
+		font-size: 3.5rem;
+	}
+}
+
+@media screen and (max-width: 767px)
+{
+
+}
