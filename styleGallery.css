@@ -9,7 +9,7 @@
 	
 	text-align: center;
 	margin: 50px;
-	margin-top: 5%;
+	margin-top: 0;
 }
 
 .outside img
@@ -74,30 +74,14 @@
 	}
 }
 
-.outside p:nth-child(1)
-{
-	position: absolute;
-	width: 41%;
-	font-size: 30px;
 
-	padding: 5px;
-	margin: auto;
-	top: 32%;
-	left: 6%;
-
-	border-radius: 3px;
-	border-left: 7px solid var(--accent);
-	background-color: var(--secondary);
-}
 
 .filters
 {
 	display: flex;
-
-	position: absolute;
-	top: 25%;
-	/* width: 45%; */
 	flex-wrap: wrap;
+
+	margin-bottom: 0;
 }
 
 .filters label
