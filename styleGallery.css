@@ -3,7 +3,7 @@
 .outside
 {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(12vw, 1fr));
 	grid-template-rows: repeat(10, 50vh);
 	grid-auto-flow: dense;
 	

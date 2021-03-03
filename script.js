@@ -265,7 +265,6 @@ $(document).ready(function()
     	var filter = $(this).attr("data-filter");
     	if ($(this).children("input").is(":checked"))
 	      {
-	      	console.log(filterArray.indexOf(filter));
 	      	//$(".cell").filter("." + $(this).attr("data-filter")).show();
 	        if (filterArray.indexOf(filter) == -1)
 		        {
@@ -281,11 +280,44 @@ $(document).ready(function()
 
     $(".cell").hide();
 
-    for (i = 0 ; i < filterArray.length ; i++)
-    {
-    	$("." + filterArray[i]).show();
-    }
+    // for (i = 0 ; i < filterArray.length ; i++)
+    // {
+    // 	console.log($("." + filterArray[i]));
+    // 	$("." + filterArray[i]).show();
+    // }
     // console.log(filterArray.length);
+
+	$(".cell").each(function()
+	{
+		let compteur = 0
+   		for (j = 0 ; j < filterArray.length ; j++)
+   		{
+   			currentTag = filterArray[j];
+
+   			console.log(currentTag)
+   			
+	    	if ($(this).hasClass(currentTag))
+	    	{
+	    		break;
+	    	}
+	    	else
+	    	{
+	    		compteur++;
+	    	}
+	    }
+
+	    console.log("Compteur = " + compteur)
+
+	    if (compteur > 0)
+	    {
+	    	$(this).hide();
+	    }
+	    else
+	    {
+	    	$(this).show();
+	    }
+	})
+
   })
 })
 
