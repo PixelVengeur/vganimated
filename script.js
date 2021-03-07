@@ -294,7 +294,7 @@ $(document).ready(function()
    		{
    			currentTag = filterArray[j];
 
-   			console.log(currentTag)
+   			// console.log(currentTag)
    			
 	    	if ($(this).hasClass(currentTag))
 	    	{
@@ -306,7 +306,7 @@ $(document).ready(function()
 	    	}
 	    }
 
-	    console.log("Compteur = " + compteur)
+	    // console.log("Compteur = " + compteur)
 
 	    if (compteur > 0)
 	    {
